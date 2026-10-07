@@ -2,7 +2,7 @@
  "format": "keybinding-explorer-keymap/1",
  "generatedBy": "keymaps/gen-hyprpi.mjs",
  "source": "https://github.com/angusforbes/hyprpi",
- "sourceCommit": "7eea4e92a71fd7a7e9d2a2d2ce78cf0e18dd2361",
+ "sourceCommit": "1ef2b2f8b1709d76640bb62e733249c70bff7c2d",
  "id": "hyprpi-thoughts",
  "app": "hyprpi Thoughts",
  "about": "hyprpi's Thoughts window: talk to this world's Thoughts agent, search its history",
@@ -325,7 +325,7 @@
    "args": "",
    "desc": "this list",
    "src": [
-    "lib/tui/command-line.mjs:66"
+    "lib/tui/command-line.mjs:67"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -334,7 +334,7 @@
    "args": "",
    "desc": "go to the agents panel for this world (open it here if it isn't open)",
    "src": [
-    "lib/tui/command-line.mjs:68"
+    "lib/tui/command-line.mjs:69"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -343,7 +343,7 @@
    "args": "",
    "desc": "go to the Stream panel for this world (open it here if it isn't open)",
    "src": [
-    "lib/tui/command-line.mjs:68"
+    "lib/tui/command-line.mjs:69"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -352,7 +352,7 @@
    "args": "",
    "desc": "go to the projects panel for this world (open it here if it isn't open)",
    "src": [
-    "lib/tui/command-line.mjs:68"
+    "lib/tui/command-line.mjs:69"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -361,7 +361,7 @@
    "args": "",
    "desc": "go to the projects panel for this world (the same as /board)",
    "src": [
-    "lib/tui/command-line.mjs:71"
+    "lib/tui/command-line.mjs:72"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -370,7 +370,7 @@
    "args": "",
    "desc": "go to the Stream panel for this world (the same as /room; in the Stream, /stream filters it)",
    "src": [
-    "lib/tui/command-line.mjs:72"
+    "lib/tui/command-line.mjs:73"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -379,7 +379,7 @@
    "args": "X",
    "desc": "switch this panel to world X (^Tab steps through them)",
    "src": [
-    "lib/tui/command-line.mjs:89"
+    "lib/tui/command-line.mjs:90"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -388,7 +388,7 @@
    "args": "@Name",
    "desc": "jump to that agent's window, wherever it is (Tab completes the name; the same as Ctrl+click)",
    "src": [
-    "lib/tui/command-line.mjs:98"
+    "lib/tui/command-line.mjs:99"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -397,7 +397,7 @@
    "args": "[DIR]",
    "desc": "a new agent here (projects: /project on the board)",
    "src": [
-    "lib/tui/command-line.mjs:109"
+    "lib/tui/command-line.mjs:110"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -406,7 +406,7 @@
    "args": "[W:] TEXT",
    "desc": "drop a friction fix off in the workshop world (one free agent there does it); W: sets the workshop to world W",
    "src": [
-    "lib/tui/command-line.mjs:118"
+    "lib/tui/command-line.mjs:119"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -415,7 +415,7 @@
    "args": "",
    "desc": "close this panel",
    "src": [
-    "lib/tui/command-line.mjs:128"
+    "lib/tui/command-line.mjs:129"
    ],
    "where": "the box, in every hyprpi panel"
   }

@@ -2,7 +2,7 @@
  "format": "keybinding-explorer-keymap/1",
  "generatedBy": "keymaps/gen-hyprpi.mjs",
  "source": "https://github.com/angusforbes/hyprpi",
- "sourceCommit": "7eea4e92a71fd7a7e9d2a2d2ce78cf0e18dd2361",
+ "sourceCommit": "1ef2b2f8b1709d76640bb62e733249c70bff7c2d",
  "id": "hyprpi-projects",
  "app": "hyprpi projects",
  "about": "hyprpi's projects panel: this world's project board",
@@ -176,7 +176,7 @@
    "desc": "Highlight the previous card or item (Decisions: previous decision)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:797"
+    "lib/tui/board-view.mjs:818"
    ],
    "seq": "\u001b[1;5A"
   },
@@ -186,7 +186,7 @@
    "desc": "Highlight the next card or item (Decisions: next decision)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:797"
+    "lib/tui/board-view.mjs:818"
    ],
    "seq": "\u001b[1;5B"
   },
@@ -196,7 +196,7 @@
    "desc": "Fold / open the highlighted card (Cards view)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:822"
+    "lib/tui/board-view.mjs:843"
    ],
    "seq": "\u0000"
   },
@@ -206,7 +206,7 @@
    "desc": "Fold / open the highlighted card (Cards view)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:822"
+    "lib/tui/board-view.mjs:843"
    ],
    "seq": "\u000f"
   },
@@ -216,7 +216,7 @@
    "desc": "Cards view: drop the highlighted item; on a project's header: archive the project (undo is not reachable)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:810"
+    "lib/tui/board-view.mjs:831"
    ],
    "seq": "\u0004"
   },
@@ -226,7 +226,7 @@
    "desc": "Cards view: archive (or unarchive) the highlighted item",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:844"
+    "lib/tui/board-view.mjs:865"
    ],
    "seq": "\u0001"
   },
@@ -236,7 +236,7 @@
    "desc": "Cards view: mark the highlighted item done",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:848"
+    "lib/tui/board-view.mjs:869"
    ],
    "seq": "\u0014"
   },
@@ -246,7 +246,7 @@
    "desc": "Answer the highlighted decision with option 1 (a)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:830"
+    "lib/tui/board-view.mjs:851"
    ]
   },
   {
@@ -255,7 +255,7 @@
    "desc": "Answer the highlighted decision with option 2 (b)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:830"
+    "lib/tui/board-view.mjs:851"
    ]
   },
   {
@@ -264,7 +264,7 @@
    "desc": "Answer the highlighted decision with option 3 (c)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:830"
+    "lib/tui/board-view.mjs:851"
    ]
   },
   {
@@ -273,7 +273,7 @@
    "desc": "Answer the highlighted decision with option 4 (d)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:830"
+    "lib/tui/board-view.mjs:851"
    ]
   },
   {
@@ -282,7 +282,7 @@
    "desc": "Answer the highlighted decision with option 5 (e)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:830"
+    "lib/tui/board-view.mjs:851"
    ]
   },
   {
@@ -291,7 +291,7 @@
    "desc": "Answer the highlighted decision with option 6 (f)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:830"
+    "lib/tui/board-view.mjs:851"
    ]
   },
   {
@@ -300,7 +300,7 @@
    "desc": "Answer the highlighted decision with option 7 (g)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:830"
+    "lib/tui/board-view.mjs:851"
    ]
   },
   {
@@ -309,7 +309,7 @@
    "desc": "Answer the highlighted decision with option 8 (h)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:830"
+    "lib/tui/board-view.mjs:851"
    ]
   },
   {
@@ -318,7 +318,7 @@
    "desc": "Answer the highlighted decision with option 9 (i)",
    "section": "Projects",
    "src": [
-    "lib/tui/board-view.mjs:830"
+    "lib/tui/board-view.mjs:851"
    ]
   },
   {
@@ -582,7 +582,7 @@
    "args": "",
    "desc": "go to the agents panel for this world (open it here if it isn't open)",
    "src": [
-    "lib/tui/command-line.mjs:68"
+    "lib/tui/command-line.mjs:69"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -591,7 +591,7 @@
    "args": "",
    "desc": "go to the Stream panel for this world (open it here if it isn't open)",
    "src": [
-    "lib/tui/command-line.mjs:68"
+    "lib/tui/command-line.mjs:69"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -600,7 +600,7 @@
    "args": "",
    "desc": "go to the projects panel for this world (open it here if it isn't open)",
    "src": [
-    "lib/tui/command-line.mjs:68"
+    "lib/tui/command-line.mjs:69"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -609,7 +609,7 @@
    "args": "[WORDS]",
    "desc": "go to the Thoughts window for this world; with WORDS a /keyword search there",
    "src": [
-    "lib/tui/command-line.mjs:69"
+    "lib/tui/command-line.mjs:70"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -618,7 +618,7 @@
    "args": "",
    "desc": "go to the projects panel for this world (the same as /board)",
    "src": [
-    "lib/tui/command-line.mjs:71"
+    "lib/tui/command-line.mjs:72"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -627,7 +627,7 @@
    "args": "",
    "desc": "go to the Stream panel for this world (the same as /room; in the Stream, /stream filters it)",
    "src": [
-    "lib/tui/command-line.mjs:72"
+    "lib/tui/command-line.mjs:73"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -636,7 +636,7 @@
    "args": "QUESTION",
    "desc": "ask about this world's history in the Thoughts window (/ask: an answer + the turns it cites)",
    "src": [
-    "lib/tui/command-line.mjs:73"
+    "lib/tui/command-line.mjs:74"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -645,7 +645,7 @@
    "args": "TEXT",
    "desc": "tell this world's Thoughts agent (the reply is in the Thoughts window, SUPER+ALT+/)",
    "src": [
-    "lib/tui/command-line.mjs:77"
+    "lib/tui/command-line.mjs:78"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -654,7 +654,7 @@
    "args": "[@names…] [3h|today|since 9am] [words]",
    "desc": "Thoughts sums up the Stream by project (done · decided · waiting on you) in the Thoughts window; alone: since you last looked there",
    "src": [
-    "lib/tui/command-line.mjs:85"
+    "lib/tui/command-line.mjs:86"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -663,7 +663,7 @@
    "args": "QUESTION",
    "desc": "the same as /ai",
    "src": [
-    "lib/tui/command-line.mjs:87"
+    "lib/tui/command-line.mjs:88"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -672,7 +672,7 @@
    "args": "X",
    "desc": "switch this panel to world X (^Tab steps through them)",
    "src": [
-    "lib/tui/command-line.mjs:89"
+    "lib/tui/command-line.mjs:90"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -681,7 +681,7 @@
    "args": "@Name",
    "desc": "jump to that agent's window, wherever it is (Tab completes the name; the same as Ctrl+click)",
    "src": [
-    "lib/tui/command-line.mjs:98"
+    "lib/tui/command-line.mjs:99"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -690,7 +690,7 @@
    "args": "[DIR]",
    "desc": "a new agent here (projects: /project on the board)",
    "src": [
-    "lib/tui/command-line.mjs:109"
+    "lib/tui/command-line.mjs:110"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -699,7 +699,7 @@
    "args": "[W:] TEXT",
    "desc": "drop a friction fix off in the workshop world (one free agent there does it); W: sets the workshop to world W",
    "src": [
-    "lib/tui/command-line.mjs:118"
+    "lib/tui/command-line.mjs:119"
    ],
    "where": "the box, in every hyprpi panel"
   },
@@ -708,7 +708,7 @@
    "args": "",
    "desc": "close this panel",
    "src": [
-    "lib/tui/command-line.mjs:128"
+    "lib/tui/command-line.mjs:129"
    ],
    "where": "the box, in every hyprpi panel"
   }
