@@ -1,0 +1,360 @@
+{
+ "format": "keybinding-explorer-keymap/1",
+ "generatedBy": "keymaps/gen-hyprpi.mjs",
+ "source": "https://github.com/angusforbes/hyprpi",
+ "sourceCommit": "7eea4e92a71fd7a7e9d2a2d2ce78cf0e18dd2361",
+ "id": "hyprpi-agents",
+ "app": "hyprpi agents",
+ "about": "hyprpi's agents panel: this world's agents and projects",
+ "match": [
+  "hyprpi",
+  "agents",
+  "panel",
+  "router"
+ ],
+ "focus": {
+  "title": [
+   "^hyprpi-router [A-Z]$"
+  ]
+ },
+ "include": [
+  "hyprpi-shared"
+ ],
+ "prefix": "/",
+ "bindings": [
+  {
+   "mods": "",
+   "key": "RETURN",
+   "desc": "Run the /command in the box; empty box: the agent under the cursor (live: jump to its window · parked: revive it here · closed: resume it)",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:519"
+   ],
+   "seq": "\r"
+  },
+  {
+   "mods": "",
+   "key": "TAB",
+   "desc": "Complete a /command",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:525"
+   ],
+   "seq": "\t"
+  },
+  {
+   "mods": "",
+   "key": "ESCAPE",
+   "desc": "Close help; with text in the box: drop its selection, else clear it",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:526"
+   ],
+   "seq": "\u001b"
+  },
+  {
+   "mods": "CTRL",
+   "key": "C",
+   "desc": "Copy the box (its selection, else all); empty box: quit",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:518"
+   ],
+   "seq": "\u0003"
+  },
+  {
+   "mods": "CTRL",
+   "key": "Q",
+   "desc": "Quit the panel",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:517"
+   ],
+   "seq": "\u0011"
+  },
+  {
+   "mods": "CTRL",
+   "key": "O",
+   "desc": "Views: live · + parked / closed (and archived projects)",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:538"
+   ],
+   "seq": "\u000f"
+  },
+  {
+   "mods": "CTRL",
+   "key": "W",
+   "desc": "Close the agent under the cursor (empty box; twice to confirm). With text: delete a word",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:532"
+   ],
+   "seq": "\u0017"
+  },
+  {
+   "mods": "CTRL",
+   "key": "K",
+   "desc": "Kill the agent under the cursor (twice to confirm; a closed agent: forget it)",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:540"
+   ],
+   "seq": "\u000b"
+  },
+  {
+   "mods": "CTRL",
+   "key": "N",
+   "desc": "A new agent here",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:541"
+   ],
+   "seq": "\u000e"
+  },
+  {
+   "mods": "CTRL",
+   "key": "TAB",
+   "desc": "Next world",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:544"
+   ],
+   "seq": "\u001b[9;5u"
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "TAB",
+   "desc": "Previous world",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:545"
+   ],
+   "seq": "\u001b[9;6u"
+  },
+  {
+   "mods": "CTRL",
+   "key": "UP",
+   "desc": "Cursor up the list",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:547"
+   ],
+   "seq": "\u001b[1;5A"
+  },
+  {
+   "mods": "CTRL",
+   "key": "DOWN",
+   "desc": "Cursor down the list",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:548"
+   ],
+   "seq": "\u001b[1;5B"
+  },
+  {
+   "mods": "CTRL",
+   "key": "HOME",
+   "desc": "Cursor to the first agent",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:549"
+   ],
+   "seq": "\u001b[1;5H"
+  },
+  {
+   "mods": "CTRL",
+   "key": "END",
+   "desc": "Cursor to the last row",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:550"
+   ],
+   "seq": "\u001b[1;5F"
+  },
+  {
+   "mods": "",
+   "key": "PRIOR",
+   "desc": "Cursor up 5",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:551"
+   ],
+   "seq": "\u001b[5~"
+  },
+  {
+   "mods": "",
+   "key": "NEXT",
+   "desc": "Cursor down 5",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:552"
+   ],
+   "seq": "\u001b[6~"
+  },
+  {
+   "mods": "CTRL",
+   "key": "LEFT MOUSE BUTTON",
+   "desc": "That agent, as Enter would (jump · revive · resume); on a project: its card",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:567"
+   ]
+  },
+  {
+   "mods": "",
+   "key": "LEFT MOUSE BUTTON",
+   "desc": "Put the cursor on a row; on a project's @member: jump to that agent",
+   "section": "Agents",
+   "src": [
+    "mockups/agents-tui.mjs:556"
+   ]
+  }
+ ],
+ "commands": [
+  {
+   "cmd": "help",
+   "args": "",
+   "desc": "this list",
+   "src": [
+    "lib/tui/command-line.mjs:66"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "agents",
+   "args": "",
+   "desc": "go to the agents panel for this world (open it here if it isn't open)",
+   "src": [
+    "lib/tui/command-line.mjs:68"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "room",
+   "args": "",
+   "desc": "go to the Stream panel for this world (open it here if it isn't open)",
+   "src": [
+    "lib/tui/command-line.mjs:68"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "board",
+   "args": "",
+   "desc": "go to the projects panel for this world (open it here if it isn't open)",
+   "src": [
+    "lib/tui/command-line.mjs:68"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "search",
+   "args": "[WORDS]",
+   "desc": "go to the Thoughts window for this world; with WORDS a /keyword search there",
+   "src": [
+    "lib/tui/command-line.mjs:69"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "projects",
+   "args": "",
+   "desc": "go to the projects panel for this world (the same as /board)",
+   "src": [
+    "lib/tui/command-line.mjs:71"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "stream",
+   "args": "",
+   "desc": "go to the Stream panel for this world (the same as /room; in the Stream, /stream filters it)",
+   "src": [
+    "lib/tui/command-line.mjs:72"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "ai",
+   "args": "QUESTION",
+   "desc": "ask about this world's history in the Thoughts window (/ask: an answer + the turns it cites)",
+   "src": [
+    "lib/tui/command-line.mjs:73"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "thought",
+   "args": "TEXT",
+   "desc": "tell this world's Thoughts agent (the reply is in the Thoughts window, SUPER+ALT+/)",
+   "src": [
+    "lib/tui/command-line.mjs:77"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "digest",
+   "args": "[@names…] [3h|today|since 9am] [words]",
+   "desc": "Thoughts sums up the Stream by project (done · decided · waiting on you) in the Thoughts window; alone: since you last looked there",
+   "src": [
+    "lib/tui/command-line.mjs:85"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "ask",
+   "args": "QUESTION",
+   "desc": "the same as /ai",
+   "src": [
+    "lib/tui/command-line.mjs:87"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "world",
+   "args": "X",
+   "desc": "switch this panel to world X (^Tab steps through them)",
+   "src": [
+    "lib/tui/command-line.mjs:89"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "go",
+   "args": "@Name",
+   "desc": "jump to that agent's window, wherever it is (Tab completes the name; the same as Ctrl+click)",
+   "src": [
+    "lib/tui/command-line.mjs:98"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "new",
+   "args": "[DIR]",
+   "desc": "a new agent here (projects: /project on the board)",
+   "src": [
+    "lib/tui/command-line.mjs:109"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "tinker",
+   "args": "[W:] TEXT",
+   "desc": "drop a friction fix off in the workshop world (one free agent there does it); W: sets the workshop to world W",
+   "src": [
+    "lib/tui/command-line.mjs:118"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "quit",
+   "args": "",
+   "desc": "close this panel",
+   "src": [
+    "lib/tui/command-line.mjs:128"
+   ],
+   "where": "the box, in every hyprpi panel"
+  }
+ ]
+}

@@ -1,0 +1,391 @@
+{
+ "format": "keybinding-explorer-keymap/1",
+ "generatedBy": "keymaps/gen-hyprpi.mjs",
+ "source": "https://github.com/angusforbes/hyprpi",
+ "sourceCommit": "7eea4e92a71fd7a7e9d2a2d2ce78cf0e18dd2361",
+ "id": "hyprpi-shared",
+ "shared": true,
+ "about": "The message box every hyprpi panel shares (lib/tui/input-box.mjs)",
+ "bindings": [
+  {
+   "mods": "",
+   "key": "UP",
+   "desc": "Up a line in the box; at its start, your earlier messages (history)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:212"
+   ],
+   "seq": "\u001b[A"
+  },
+  {
+   "mods": "",
+   "key": "DOWN",
+   "desc": "Down a line in the box; at its end, forward through history to your draft",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:212"
+   ],
+   "seq": "\u001b[B"
+  },
+  {
+   "mods": "",
+   "key": "LEFT",
+   "desc": "Cursor left (with a selection: to its start)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:235"
+   ],
+   "seq": "\u001b[D"
+  },
+  {
+   "mods": "",
+   "key": "RIGHT",
+   "desc": "Cursor right (with a selection: to its end)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:236"
+   ],
+   "seq": "\u001b[C"
+  },
+  {
+   "mods": "CTRL",
+   "key": "LEFT",
+   "desc": "Word left",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:237"
+   ],
+   "seq": "\u001b[1;5D"
+  },
+  {
+   "mods": "CTRL",
+   "key": "RIGHT",
+   "desc": "Word right",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:238"
+   ],
+   "seq": "\u001b[1;5C"
+  },
+  {
+   "mods": "ALT",
+   "key": "LEFT",
+   "desc": "Word left",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:237"
+   ],
+   "seq": "\u001b[1;3D"
+  },
+  {
+   "mods": "ALT",
+   "key": "RIGHT",
+   "desc": "Word right",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:238"
+   ],
+   "seq": "\u001b[1;3C"
+  },
+  {
+   "mods": "ALT",
+   "key": "B",
+   "desc": "Word left",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:237"
+   ],
+   "seq": "\u001bb"
+  },
+  {
+   "mods": "ALT",
+   "key": "F",
+   "desc": "Word right",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:238"
+   ],
+   "seq": "\u001bf"
+  },
+  {
+   "mods": "",
+   "key": "HOME",
+   "desc": "Start of the line",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:239"
+   ],
+   "seq": "\u001b[H"
+  },
+  {
+   "mods": "",
+   "key": "END",
+   "desc": "End of the line",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:240"
+   ],
+   "seq": "\u001b[F"
+  },
+  {
+   "mods": "CTRL",
+   "key": "E",
+   "desc": "End of the line",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:240"
+   ],
+   "seq": "\u0005"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "LEFT",
+   "desc": "Select left",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:225"
+   ],
+   "seq": "\u001b[1;2D"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "RIGHT",
+   "desc": "Select right",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:226"
+   ],
+   "seq": "\u001b[1;2C"
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "LEFT",
+   "desc": "Select a word left",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:227"
+   ],
+   "seq": "\u001b[1;6D"
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "RIGHT",
+   "desc": "Select a word right",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:228"
+   ],
+   "seq": "\u001b[1;6C"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "HOME",
+   "desc": "Select to the start of the line",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:229"
+   ],
+   "seq": "\u001b[1;2H"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "END",
+   "desc": "Select to the end of the line",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:230"
+   ],
+   "seq": "\u001b[1;2F"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "UP",
+   "desc": "Select up a line",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:231"
+   ],
+   "seq": "\u001b[1;2A"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "DOWN",
+   "desc": "Select down a line",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:232"
+   ],
+   "seq": "\u001b[1;2B"
+  },
+  {
+   "mods": "",
+   "key": "BACKSPACE",
+   "desc": "Delete the character before the cursor (or the selection)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:243"
+   ],
+   "seq": ""
+  },
+  {
+   "mods": "",
+   "key": "DELETE",
+   "desc": "Delete the character after the cursor (or the selection)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:244"
+   ],
+   "seq": "\u001b[3~"
+  },
+  {
+   "mods": "ALT",
+   "key": "BACKSPACE",
+   "desc": "Delete the word before the cursor",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:245"
+   ],
+   "seq": "\u001b"
+  },
+  {
+   "mods": "CTRL",
+   "key": "W",
+   "desc": "Delete the word before the cursor",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:245"
+   ],
+   "seq": "\u0017"
+  },
+  {
+   "mods": "CTRL",
+   "key": "U",
+   "desc": "Clear the box (Alt+Z brings it back)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:241"
+   ],
+   "seq": "\u0015"
+  },
+  {
+   "mods": "CTRL",
+   "key": "C",
+   "desc": "Copy the selection, else the whole text (never deletes)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:175"
+   ],
+   "seq": "\u0003"
+  },
+  {
+   "mods": "CTRL",
+   "key": "INSERT",
+   "desc": "Copy (what Omarchy's SUPER+C sends)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:176"
+   ],
+   "seq": "\u001b[2;5~"
+  },
+  {
+   "mods": "CTRL",
+   "key": "X",
+   "desc": "Cut the selection",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:177"
+   ],
+   "seq": "\u0018"
+  },
+  {
+   "mods": "CTRL",
+   "key": "V",
+   "desc": "Paste text, or a screenshot: its path goes in at the cursor",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:178"
+   ],
+   "seq": "\u0016"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "INSERT",
+   "desc": "Paste (what Omarchy's SUPER+V sends)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:178"
+   ],
+   "seq": "\u001b[2;2~"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "RETURN",
+   "desc": "New line in the message",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:179"
+   ],
+   "seq": "\u001b[13;2u"
+  },
+  {
+   "mods": "CTRL",
+   "key": "Z",
+   "desc": "Undo",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:180"
+   ],
+   "seq": "\u001a"
+  },
+  {
+   "mods": "CTRL",
+   "key": "SLASH",
+   "desc": "Undo (Ctrl+- too)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:180"
+   ],
+   "seq": "\u001f"
+  },
+  {
+   "mods": "CTRL",
+   "key": "MINUS",
+   "desc": "Undo (Ctrl+- too)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:180"
+   ],
+   "seq": "\u001f"
+  },
+  {
+   "mods": "CTRL",
+   "key": "Y",
+   "desc": "Redo",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:181"
+   ],
+   "seq": "\u0019"
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "Z",
+   "desc": "Redo",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:181"
+   ],
+   "seq": "\u001b[122;6u"
+  },
+  {
+   "mods": "ALT",
+   "key": "Z",
+   "desc": "The previous cleared draft (again: older ones)",
+   "section": "Message box",
+   "src": [
+    "lib/tui/input-box.mjs:182"
+   ],
+   "seq": "\u001bz"
+  }
+ ]
+}

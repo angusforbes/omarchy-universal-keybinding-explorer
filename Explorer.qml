@@ -145,16 +145,31 @@ Item {
   function loadKeymaps(text) {
     var list = []
     try { list = JSON.parse(text || "[]") || [] } catch (e) { console.warn("keybinding-explorer: bad keymap JSON", e); list = [] }
-    root.apps = list.filter(function(a) { return a && a.app && Array.isArray(a.bindings) }).map(function(a) {
-      var bs = a.bindings.map(function(b) {
-        var mods = String(b.mods || "").split(/[\s+]+/).filter(function(m) { return m.length > 0 })
-        var desc = (b.section ? b.section + ": " : "") + b.desc
-        return { mods: root.modKey(mods), key: String(b.key), keyU: String(b.key).toUpperCase(), desc: desc, section: b.section || "" }
+    list = list.filter(function(a) { return a && (Array.isArray(a.bindings) || Array.isArray(a.commands)) })
+    // Shared files ("shared": true, no app of their own) hold keys or commands several apps have; an app pulls them in
+    // with "include": [ids]. The app's own entries win: an included key is dropped when the app has the same chord,
+    // an included command when the app has one of the same name.
+    var byId = {}
+    list.forEach(function(a) { if (a.id) byId[a.id] = a })
+    var mapB = function(b) {
+      var mods = String(b.mods || "").split(/[\s+]+/).filter(function(m) { return m.length > 0 })
+      var desc = (b.section ? b.section + ": " : "") + b.desc
+      return { mods: root.modKey(mods), key: String(b.key), keyU: String(b.key).toUpperCase(), desc: desc, section: b.section || "" }
+    }
+    var mapC = function(c) { return { cmd: String(c.cmd), args: c.args || "", desc: c.desc || "", where: c.where || "", aliases: c.aliases || [] } }
+    root.apps = list.filter(function(a) { return a.app && !a.shared }).map(function(a) {
+      var bs = (a.bindings || []).map(mapB), cs = (a.commands || []).map(mapC)
+      var have = {}, haveC = {}
+      bs.forEach(function(b) { have[b.mods + "|" + b.keyU] = true })
+      cs.forEach(function(c) { haveC[c.cmd] = true })
+      ;[].concat(a.include || []).forEach(function(id) {
+        var sh = byId[id]
+        if (!sh) { console.warn("keybinding-explorer: " + a.app + " includes a missing keymap", id); return }
+        ;(sh.bindings || []).map(mapB).forEach(function(b) { var k = b.mods + "|" + b.keyU; if (!have[k]) { have[k] = true; bs.push(b) } })
+        ;(sh.commands || []).map(mapC).forEach(function(c) { if (!haveC[c.cmd]) { haveC[c.cmd] = true; cs.push(c) } })
       })
-      var cs = (Array.isArray(a.commands) ? a.commands : []).map(function(c) {
-        return { cmd: String(c.cmd), args: c.args || "", desc: c.desc || "", where: c.where || "", aliases: c.aliases || [] }
-      })
-      return { id: a.id || a.app, app: a.app, about: a.about || "", match: a.match || [], focus: a.focus || {}, bindings: bs, commands: cs }
+      return { id: a.id || a.app, app: a.app, about: a.about || "", match: a.match || [], focus: a.focus || {}, bindings: bs, commands: cs,
+               prefix: String(a.prefix || ":") }
     })
   }
 
@@ -241,7 +256,7 @@ Item {
     })
     // Like the app's own Tab completion: name prefixes; only when none fits, any command mentioning the letters.
     return (pre.length ? pre : rest).map(function(c) {
-      return { cmdRow: c, left: ":" + c.cmd + (c.args ? " " + c.args : ""), right: c.desc, hit: false }
+      return { cmdRow: c, left: root.app.prefix + c.cmd + (c.args ? " " + c.args : ""), right: c.desc, hit: false }
     })
   }
 
@@ -265,7 +280,7 @@ Item {
     if (!root.app) return false
     var hard = event.modifiers & (Qt.MetaModifier | Qt.ControlModifier | Qt.AltModifier)
     if (!root.cmdMode) {
-      if (!hard && event.text === ":" && root.browseWord === "") { root.enterCmd(); return true }
+      if (!hard && event.text === root.app.prefix && root.browseWord === "") { root.enterCmd(); return true }
       return false
     }
     if (hard) { root.exitCmd(); return false }
@@ -766,7 +781,7 @@ Item {
   function chipLabels() {
     var mods = root.comboKey !== "" ? root.comboMods : root.shownMods
     var out = root.modKey(mods).split(" ").filter(function(x) { return x.length > 0 })   // SUPER CTRL SHIFT ALT, not press order
-    if (root.cmdMode) return [":" + root.cmdFilter.replace(/ /g, "\u2423")]
+    if (root.cmdMode) return [root.app.prefix + root.cmdFilter.replace(/ /g, "\u2423")]
     if (root.comboKey !== "") out.push(root.displayKey(root.comboKey))
     else if (root.browseWord !== "") out.push(root.browseWord.replace(/ /g, "\u2423"))
     return out
@@ -899,7 +914,7 @@ Item {
       })
       var cmdRows = root.commandRows("")
       if (cmdRows.length) {   // the app's ":" commands
-        rows.push({ header: true, left: "Commands (type :)", right: cmdRows.length + (cmdRows.length === 1 ? " command" : " commands"), hit: false })
+        rows.push({ header: true, left: "Commands (type " + root.app.prefix + ")", right: cmdRows.length + (cmdRows.length === 1 ? " command" : " commands"), hit: false })
         rows = rows.concat(cmdRows)
       }
     } else if (root.browseAll || (mods.length === 0 && root.comboKey === "")) {
@@ -1321,11 +1336,11 @@ Item {
               text: {
                 if (cursorApp) return cursorApp.app + ": press Enter to explore its keys"
                 var cc = root.cursorRow >= 0 && root.rows[root.cursorRow] ? root.rows[root.cursorRow].cmdRow : null
-                if (cc) return ":" + cc.cmd + (cc.args ? " " + cc.args : "") + "  \u2014  " + cc.desc + (cc.where ? "  (" + cc.where + ")" : "")
+                if (cc) return root.app.prefix + cc.cmd + (cc.args ? " " + cc.args : "") + "  \u2014  " + cc.desc + (cc.where ? "  (" + cc.where + ")" : "")
                 if (root.cmdMode) {
                   var nc = root.rows.length
-                  return nc === 0 ? "No " + root.app.app + " command matches \u201c:" + root.cmdFilter + "\u201d"
-                       : nc === 1 ? ":" + root.rows[0].cmdRow.cmd + (root.rows[0].cmdRow.args ? " " + root.rows[0].cmdRow.args : "") + "  \u2014  " + root.rows[0].cmdRow.desc
+                  return nc === 0 ? "No " + root.app.app + " command matches \u201c" + root.app.prefix + root.cmdFilter + "\u201d"
+                       : nc === 1 ? root.app.prefix + root.rows[0].cmdRow.cmd + (root.rows[0].cmdRow.args ? " " + root.rows[0].cmdRow.args : "") + "  \u2014  " + root.rows[0].cmdRow.desc
                        : nc + " " + root.app.app + " commands" + (root.cmdFilter ? " match" : "") + "  \u00b7  type to filter"
                 }
                 if (root.comboKey !== "" && root.app && root.matches.length === 0 && !(root.comboMods.length === 0 && root.variants.length > 0))
@@ -1558,7 +1573,7 @@ Item {
           anchors { top: rule.bottom; topMargin: Style.spacing.lg; left: parent.left }
           text: root.browseWord !== "" ? "Bindings matching \u201c" + root.browseWord + "\u201d"
                 : root.browseKey !== "" ? "Every binding on " + root.prettyKey(root.rawDisplayKey(root.browseKey))
-                : root.cmdMode ? (root.cmdFilter ? root.app.app + " commands matching \u201c:" + root.cmdFilter + "\u201d" : root.app.app + " commands")
+                : root.cmdMode ? (root.cmdFilter ? root.app.app + " commands matching \u201c" + root.app.prefix + root.cmdFilter + "\u201d" : root.app.app + " commands")
                 : root.app && (root.browseAll || (root.activeModKey === "" && root.comboKey === "")) ? "All " + root.app.app + " keys"
                 : root.browseAll ? "All keybindings"
                 : root.activeModKey !== "" ? root.activeModKey + " + …"

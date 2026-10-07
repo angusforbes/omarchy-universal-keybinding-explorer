@@ -1,0 +1,417 @@
+{
+ "format": "keybinding-explorer-keymap/1",
+ "generatedBy": "keymaps/gen-hyprpi.mjs",
+ "source": "https://github.com/angusforbes/hyprpi",
+ "sourceCommit": "7eea4e92a71fd7a7e9d2a2d2ce78cf0e18dd2361",
+ "id": "hyprpi-stream",
+ "app": "hyprpi Stream",
+ "about": "hyprpi's Stream panel: this world's room, messages and activity",
+ "match": [
+  "hyprpi",
+  "stream",
+  "room",
+  "panel"
+ ],
+ "focus": {
+  "title": [
+   "^hyprpi-room [A-Z]$"
+  ]
+ },
+ "include": [
+  "hyprpi-shared"
+ ],
+ "prefix": "/",
+ "bindings": [
+  {
+   "mods": "",
+   "key": "RETURN",
+   "desc": "Send the message (or run the /command)",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:832"
+   ],
+   "seq": "\r"
+  },
+  {
+   "mods": "CTRL",
+   "key": "RETURN",
+   "desc": "Send, the same as Enter",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:787"
+   ],
+   "seq": "\u001b[13;5u"
+  },
+  {
+   "mods": "",
+   "key": "TAB",
+   "desc": "Complete a /command; else an @project at the cursor (again: the next one)",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:765"
+   ],
+   "seq": "\t"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "TAB",
+   "desc": "Complete an @agent at the cursor (again: the next one)",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:806"
+   ],
+   "seq": "\u001b[Z"
+  },
+  {
+   "mods": "CTRL",
+   "key": "F",
+   "desc": "Stream view: full → compact → topics → all activity",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:878"
+   ],
+   "seq": "\u0006"
+  },
+  {
+   "mods": "CTRL",
+   "key": "TAB",
+   "desc": "Next world",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:804"
+   ]
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "TAB",
+   "desc": "Previous world",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:805"
+   ]
+  },
+  {
+   "mods": "ALT",
+   "key": "UP",
+   "desc": "Pick the previous Stream row",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:860"
+   ],
+   "seq": "\u001b[1;3A"
+  },
+  {
+   "mods": "ALT",
+   "key": "DOWN",
+   "desc": "Pick the next Stream row",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:860"
+   ],
+   "seq": "\u001b[1;3B"
+  },
+  {
+   "mods": "ALT",
+   "key": "HOME",
+   "desc": "Pick the oldest Stream row",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:860"
+   ],
+   "seq": "\u001b[1;3H"
+  },
+  {
+   "mods": "ALT",
+   "key": "END",
+   "desc": "No row picked (back to the newest)",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:860"
+   ],
+   "seq": "\u001b[1;3F"
+  },
+  {
+   "mods": "CTRL",
+   "key": "UP",
+   "desc": "Scroll the Stream up a line",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:852"
+   ],
+   "seq": "\u001b[1;5A"
+  },
+  {
+   "mods": "CTRL",
+   "key": "DOWN",
+   "desc": "Scroll the Stream down a line",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:852"
+   ],
+   "seq": "\u001b[1;5B"
+  },
+  {
+   "mods": "",
+   "key": "PRIOR",
+   "desc": "Scroll the Stream up a page",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:852"
+   ],
+   "seq": "\u001b[5~"
+  },
+  {
+   "mods": "",
+   "key": "NEXT",
+   "desc": "Scroll the Stream down a page",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:852"
+   ],
+   "seq": "\u001b[6~"
+  },
+  {
+   "mods": "CTRL",
+   "key": "HOME",
+   "desc": "Scroll to the oldest",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:852"
+   ],
+   "seq": "\u001b[1;5H"
+  },
+  {
+   "mods": "CTRL",
+   "key": "END",
+   "desc": "Back to the newest",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:852"
+   ],
+   "seq": "\u001b[1;5F"
+  },
+  {
+   "mods": "",
+   "key": "ESCAPE",
+   "desc": "Drop the box's selection, else the picked row, else the /stream filter, else the note; in help: back",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:922"
+   ],
+   "seq": "\u001b"
+  },
+  {
+   "mods": "CTRL",
+   "key": "C",
+   "desc": "Copy the box's selection, else the whole message; never quits",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:754"
+   ],
+   "seq": "\u0003"
+  },
+  {
+   "mods": "CTRL",
+   "key": "INSERT",
+   "desc": "Copy the highlighted Stream text, else the box's selection (what SUPER+C sends)",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:742"
+   ],
+   "seq": "\u001b[2;5~"
+  },
+  {
+   "mods": "CTRL",
+   "key": "Q",
+   "desc": "Quit the panel",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:759"
+   ],
+   "seq": "\u0011"
+  },
+  {
+   "mods": "CTRL",
+   "key": "N",
+   "desc": "A new agent here",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:877"
+   ],
+   "seq": "\u000e"
+  },
+  {
+   "mods": "CTRL",
+   "key": "LEFT MOUSE BUTTON",
+   "desc": "An agent's name: jump to its window; a link or file: open it",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:895"
+   ]
+  },
+  {
+   "mods": "SHIFT",
+   "key": "LEFT MOUSE BUTTON",
+   "desc": "Copy the whole message (Shift+drag: several)",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:905"
+   ]
+  }
+ ],
+ "commands": [
+  {
+   "cmd": "stream",
+   "args": "[@names…] [3h|today|since 9am] [words] [raw]",
+   "desc": "filter the Stream: agents and projects (any of them), a time window, words (all of them), raw = tool lines too; alone clears",
+   "src": [
+    "mockups/room-tui.mjs:623"
+   ],
+   "where": "the hyprpi Stream box"
+  },
+  {
+   "cmd": "history",
+   "args": "N | all",
+   "desc": "how far back the stream goes (N interactions; default 200)",
+   "src": [
+    "mockups/room-tui.mjs:631"
+   ],
+   "where": "the hyprpi Stream box"
+  },
+  {
+   "cmd": "help",
+   "args": "",
+   "desc": "this list",
+   "src": [
+    "lib/tui/command-line.mjs:66"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "agents",
+   "args": "",
+   "desc": "go to the agents panel for this world (open it here if it isn't open)",
+   "src": [
+    "lib/tui/command-line.mjs:68"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "room",
+   "args": "",
+   "desc": "go to the Stream panel for this world (open it here if it isn't open)",
+   "src": [
+    "lib/tui/command-line.mjs:68"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "board",
+   "args": "",
+   "desc": "go to the projects panel for this world (open it here if it isn't open)",
+   "src": [
+    "lib/tui/command-line.mjs:68"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "search",
+   "args": "[WORDS]",
+   "desc": "go to the Thoughts window for this world; with WORDS a /keyword search there",
+   "src": [
+    "lib/tui/command-line.mjs:69"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "projects",
+   "args": "",
+   "desc": "go to the projects panel for this world (the same as /board)",
+   "src": [
+    "lib/tui/command-line.mjs:71"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "ai",
+   "args": "QUESTION",
+   "desc": "ask about this world's history in the Thoughts window (/ask: an answer + the turns it cites)",
+   "src": [
+    "lib/tui/command-line.mjs:73"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "thought",
+   "args": "TEXT",
+   "desc": "tell this world's Thoughts agent (the reply is in the Thoughts window, SUPER+ALT+/)",
+   "src": [
+    "lib/tui/command-line.mjs:77"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "digest",
+   "args": "[@names…] [3h|today|since 9am] [words]",
+   "desc": "Thoughts sums up the Stream by project (done · decided · waiting on you) in the Thoughts window; alone: since you last looked there",
+   "src": [
+    "lib/tui/command-line.mjs:85"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "ask",
+   "args": "QUESTION",
+   "desc": "the same as /ai",
+   "src": [
+    "lib/tui/command-line.mjs:87"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "world",
+   "args": "X",
+   "desc": "switch this panel to world X (^Tab steps through them)",
+   "src": [
+    "lib/tui/command-line.mjs:89"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "go",
+   "args": "@Name",
+   "desc": "jump to that agent's window, wherever it is (Tab completes the name; the same as Ctrl+click)",
+   "src": [
+    "lib/tui/command-line.mjs:98"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "new",
+   "args": "[DIR]",
+   "desc": "a new agent here (projects: /project on the board)",
+   "src": [
+    "lib/tui/command-line.mjs:109"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "tinker",
+   "args": "[W:] TEXT",
+   "desc": "drop a friction fix off in the workshop world (one free agent there does it); W: sets the workshop to world W",
+   "src": [
+    "lib/tui/command-line.mjs:118"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "quit",
+   "args": "",
+   "desc": "close this panel",
+   "src": [
+    "lib/tui/command-line.mjs:128"
+   ],
+   "where": "the box, in every hyprpi panel"
+  }
+ ]
+}

@@ -1,0 +1,387 @@
+{
+ "format": "keybinding-explorer-keymap/1",
+ "generatedBy": "keymaps/gen-hyprpi.mjs",
+ "source": "https://github.com/angusforbes/hyprpi",
+ "sourceCommit": "7eea4e92a71fd7a7e9d2a2d2ce78cf0e18dd2361",
+ "id": "hyprpi-thoughts",
+ "app": "hyprpi Thoughts",
+ "about": "hyprpi's Thoughts window: talk to this world's Thoughts agent, search its history",
+ "match": [
+  "hyprpi",
+  "thoughts",
+  "search",
+  "panel"
+ ],
+ "focus": {
+  "title": [
+   "^hyprpi-search [A-Z]$"
+  ]
+ },
+ "include": [
+  "hyprpi-shared"
+ ],
+ "prefix": "/",
+ "bindings": [
+  {
+   "mods": "",
+   "key": "RETURN",
+   "desc": "Talk to Thoughts (it remembers; it can ask agents and hand them work), or run the /command",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:813"
+   ],
+   "seq": "\r"
+  },
+  {
+   "mods": "CTRL",
+   "key": "RETURN",
+   "desc": "The same as Enter",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:810"
+   ],
+   "seq": "\u001b[13;5u"
+  },
+  {
+   "mods": "",
+   "key": "ESCAPE",
+   "desc": "Interrupt what's running; else close help. Never touches the box",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:775"
+   ],
+   "seq": "\u001b"
+  },
+  {
+   "mods": "CTRL",
+   "key": "T",
+   "desc": "Keyword ⇄ AI mode",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:788"
+   ],
+   "seq": "\u0014"
+  },
+  {
+   "mods": "CTRL",
+   "key": "UP",
+   "desc": "Move the highlight up (scroll back through the thread)",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:804"
+   ],
+   "seq": "\u001b[1;5A"
+  },
+  {
+   "mods": "CTRL",
+   "key": "DOWN",
+   "desc": "Move the highlight down",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:805"
+   ],
+   "seq": "\u001b[1;5B"
+  },
+  {
+   "mods": "",
+   "key": "PRIOR",
+   "desc": "Scroll back a page",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:811"
+   ],
+   "seq": "\u001b[5~"
+  },
+  {
+   "mods": "",
+   "key": "NEXT",
+   "desc": "Scroll forward a page",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:812"
+   ],
+   "seq": "\u001b[6~"
+  },
+  {
+   "mods": "CTRL",
+   "key": "HOME",
+   "desc": "The oldest",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:802"
+   ],
+   "seq": "\u001b[1;5H"
+  },
+  {
+   "mods": "CTRL",
+   "key": "END",
+   "desc": "Back to the newest, and follow",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:801"
+   ],
+   "seq": "\u001b[1;5F"
+  },
+  {
+   "mods": "",
+   "key": "END",
+   "desc": "End of the box; with an empty box, follow the newest again",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:803"
+   ],
+   "seq": "\u001b[F"
+  },
+  {
+   "mods": "",
+   "key": "TAB",
+   "desc": "Complete a /command or an @name (again: the next one)",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:793"
+   ],
+   "seq": "\t"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "TAB",
+   "desc": "Complete an @name, backwards",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:793"
+   ],
+   "seq": "\u001b[Z"
+  },
+  {
+   "mods": "CTRL",
+   "key": "TAB",
+   "desc": "Next world",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:791"
+   ]
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "TAB",
+   "desc": "Previous world",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:792"
+   ]
+  },
+  {
+   "mods": "CTRL",
+   "key": "A",
+   "desc": "Cursor to the start of the box",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:816"
+   ],
+   "seq": "\u0001"
+  },
+  {
+   "mods": "CTRL",
+   "key": "C",
+   "desc": "Copy the box's selection, else the whole box; never quits",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:784"
+   ],
+   "seq": "\u0003"
+  },
+  {
+   "mods": "CTRL",
+   "key": "INSERT",
+   "desc": "Copy the highlighted thread text, else the box's selection (what SUPER+C sends)",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:765"
+   ],
+   "seq": "\u001b[2;5~"
+  },
+  {
+   "mods": "CTRL",
+   "key": "Q",
+   "desc": "Quit the window",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:774"
+   ],
+   "seq": "\u0011"
+  },
+  {
+   "mods": "CTRL",
+   "key": "LEFT MOUSE BUTTON",
+   "desc": "An agent's name or an evidence line: jump to that agent's window",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:830"
+   ]
+  }
+ ],
+ "commands": [
+  {
+   "cmd": "keyword",
+   "args": "WORDS",
+   "desc": "exact-word search of this world's history (instant, no model): the 10 newest matching turns",
+   "src": [
+    "mockups/search-tui.mjs:200"
+   ],
+   "where": "the hyprpi Thoughts box"
+  },
+  {
+   "cmd": "search",
+   "args": "WORDS",
+   "desc": "the same as /keyword",
+   "src": [
+    "mockups/search-tui.mjs:201"
+   ],
+   "where": "the hyprpi Thoughts box"
+  },
+  {
+   "cmd": "ask",
+   "args": "QUESTION",
+   "desc": "a small model answers from the history and cites the turns (answer last)",
+   "src": [
+    "mockups/search-tui.mjs:202"
+   ],
+   "where": "the hyprpi Thoughts box"
+  },
+  {
+   "cmd": "ai",
+   "args": "QUESTION",
+   "desc": "the same as /ask",
+   "src": [
+    "mockups/search-tui.mjs:203"
+   ],
+   "where": "the hyprpi Thoughts box"
+  },
+  {
+   "cmd": "digest",
+   "args": "[@names…] [3h|today|since 9am] [words]",
+   "desc": "a summary by project (done · decided · waiting on you) of the Stream lines; alone: since you last looked here",
+   "src": [
+    "mockups/search-tui.mjs:204"
+   ],
+   "where": "the hyprpi Thoughts box"
+  },
+  {
+   "cmd": "more",
+   "args": "[N]",
+   "desc": "the last /keyword again with N (default 20) more of the older matches",
+   "src": [
+    "mockups/search-tui.mjs:205"
+   ],
+   "where": "the hyprpi Thoughts box"
+  },
+  {
+   "cmd": "thought",
+   "args": "TEXT",
+   "desc": "the same as typing TEXT: tell Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:209"
+   ],
+   "where": "the hyprpi Thoughts box"
+  },
+  {
+   "cmd": "help",
+   "args": "",
+   "desc": "this list",
+   "src": [
+    "lib/tui/command-line.mjs:66"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "agents",
+   "args": "",
+   "desc": "go to the agents panel for this world (open it here if it isn't open)",
+   "src": [
+    "lib/tui/command-line.mjs:68"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "room",
+   "args": "",
+   "desc": "go to the Stream panel for this world (open it here if it isn't open)",
+   "src": [
+    "lib/tui/command-line.mjs:68"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "board",
+   "args": "",
+   "desc": "go to the projects panel for this world (open it here if it isn't open)",
+   "src": [
+    "lib/tui/command-line.mjs:68"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "projects",
+   "args": "",
+   "desc": "go to the projects panel for this world (the same as /board)",
+   "src": [
+    "lib/tui/command-line.mjs:71"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "stream",
+   "args": "",
+   "desc": "go to the Stream panel for this world (the same as /room; in the Stream, /stream filters it)",
+   "src": [
+    "lib/tui/command-line.mjs:72"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "world",
+   "args": "X",
+   "desc": "switch this panel to world X (^Tab steps through them)",
+   "src": [
+    "lib/tui/command-line.mjs:89"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "go",
+   "args": "@Name",
+   "desc": "jump to that agent's window, wherever it is (Tab completes the name; the same as Ctrl+click)",
+   "src": [
+    "lib/tui/command-line.mjs:98"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "new",
+   "args": "[DIR]",
+   "desc": "a new agent here (projects: /project on the board)",
+   "src": [
+    "lib/tui/command-line.mjs:109"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "tinker",
+   "args": "[W:] TEXT",
+   "desc": "drop a friction fix off in the workshop world (one free agent there does it); W: sets the workshop to world W",
+   "src": [
+    "lib/tui/command-line.mjs:118"
+   ],
+   "where": "the box, in every hyprpi panel"
+  },
+  {
+   "cmd": "quit",
+   "args": "",
+   "desc": "close this panel",
+   "src": [
+    "lib/tui/command-line.mjs:128"
+   ],
+   "where": "the box, in every hyprpi panel"
+  }
+ ]
+}
