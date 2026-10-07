@@ -2,7 +2,7 @@
  "format": "keybinding-explorer-keymap/1",
  "generatedBy": "keymaps/gen-hyprpi.mjs",
  "source": "https://github.com/angusforbes/hyprpi",
- "sourceCommit": "8620bfbdd1d4fe1b003af883e135b1a9c7c6e35c",
+ "sourceCommit": "e226db9ad20417cee46758a2b336c1263adbd915",
  "id": "hyprpi-stream",
  "app": "hyprpi Stream",
  "about": "hyprpi's Stream panel: this world's room, messages and activity",
@@ -28,7 +28,7 @@
    "desc": "Send the message (or run the /command)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:832"
+    "mockups/room-tui.mjs:746"
    ],
    "seq": "\r"
   },
@@ -38,7 +38,7 @@
    "desc": "Send, the same as Enter",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:787"
+    "mockups/room-tui.mjs:724"
    ],
    "seq": "\u001b[13;5u"
   },
@@ -48,7 +48,7 @@
    "desc": "Complete a /command; else an @project at the cursor (again: the next one)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:765"
+    "mockups/room-tui.mjs:709"
    ],
    "seq": "\t"
   },
@@ -58,7 +58,7 @@
    "desc": "Complete an @agent at the cursor (again: the next one)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:806"
+    "mockups/room-tui.mjs:727"
    ],
    "seq": "\u001b[Z"
   },
@@ -68,7 +68,7 @@
    "desc": "Stream view: full → compact → topics → all activity",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:872"
+    "mockups/room-tui.mjs:780"
    ],
    "seq": "\u0006"
   },
@@ -78,7 +78,7 @@
    "desc": "Next world",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:804"
+    "mockups/room-tui.mjs:725"
    ]
   },
   {
@@ -87,7 +87,7 @@
    "desc": "Previous world",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:805"
+    "mockups/room-tui.mjs:726"
    ]
   },
   {
@@ -96,7 +96,7 @@
    "desc": "Pick the previous Stream row",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:854"
+    "mockups/room-tui.mjs:762"
    ],
    "seq": "\u001b[1;3A"
   },
@@ -106,7 +106,7 @@
    "desc": "Pick the next Stream row",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:854"
+    "mockups/room-tui.mjs:762"
    ],
    "seq": "\u001b[1;3B"
   },
@@ -116,7 +116,7 @@
    "desc": "Pick the oldest Stream row",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:854"
+    "mockups/room-tui.mjs:762"
    ],
    "seq": "\u001b[1;3H"
   },
@@ -126,7 +126,7 @@
    "desc": "No row picked (back to the newest)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:854"
+    "mockups/room-tui.mjs:762"
    ],
    "seq": "\u001b[1;3F"
   },
@@ -136,7 +136,7 @@
    "desc": "Scroll the Stream up a line",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:846"
+    "mockups/room-tui.mjs:755"
    ],
    "seq": "\u001b[1;5A"
   },
@@ -146,7 +146,7 @@
    "desc": "Scroll the Stream down a line",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:846"
+    "mockups/room-tui.mjs:755"
    ],
    "seq": "\u001b[1;5B"
   },
@@ -156,7 +156,7 @@
    "desc": "Scroll the Stream up a page",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:846"
+    "mockups/room-tui.mjs:755"
    ],
    "seq": "\u001b[5~"
   },
@@ -166,7 +166,7 @@
    "desc": "Scroll the Stream down a page",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:846"
+    "mockups/room-tui.mjs:755"
    ],
    "seq": "\u001b[6~"
   },
@@ -176,7 +176,7 @@
    "desc": "Scroll to the oldest",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:846"
+    "mockups/room-tui.mjs:755"
    ],
    "seq": "\u001b[1;5H"
   },
@@ -186,7 +186,7 @@
    "desc": "Back to the newest",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:846"
+    "mockups/room-tui.mjs:755"
    ],
    "seq": "\u001b[1;5F"
   },
@@ -196,7 +196,7 @@
    "desc": "Drop the box's selection, else the picked row, else the /stream filter, else the note; in help: back to the Stream",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:916"
+    "mockups/room-tui.mjs:822"
    ],
    "seq": "\u001b"
   },
@@ -206,7 +206,7 @@
    "desc": "Copy the box's selection, else the whole message; never quits",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:754"
+    "mockups/room-tui.mjs:698"
    ],
    "seq": "\u0003"
   },
@@ -216,7 +216,7 @@
    "desc": "Copy the highlighted Stream text, else the box's selection (what SUPER+C sends)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:742"
+    "mockups/room-tui.mjs:686"
    ],
    "seq": "\u001b[2;5~"
   },
@@ -226,7 +226,7 @@
    "desc": "Quit the panel",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:759"
+    "mockups/room-tui.mjs:703"
    ],
    "seq": "\u0011"
   },
@@ -236,7 +236,7 @@
    "desc": "A new agent here",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:871"
+    "mockups/room-tui.mjs:779"
    ],
    "seq": "\u000e"
   },
@@ -246,7 +246,7 @@
    "desc": "An agent's name: jump to its window; a link or file: open it",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:889"
+    "mockups/room-tui.mjs:795"
    ]
   },
   {
@@ -255,7 +255,7 @@
    "desc": "Copy the whole message (Shift+drag: several)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:899"
+    "mockups/room-tui.mjs:805"
    ]
   },
   {
@@ -264,7 +264,7 @@
    "desc": "Scroll the Stream up 3 lines (wheel)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:910"
+    "mockups/room-tui.mjs:816"
    ]
   },
   {
@@ -273,7 +273,7 @@
    "desc": "Scroll the Stream down 3 lines (wheel)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:910"
+    "mockups/room-tui.mjs:816"
    ]
   },
   {
@@ -282,7 +282,7 @@
    "desc": "On a world tab: switch to that world, like Ctrl+Tab. Drag over text: copy it when you let go; double / triple click in the box: select a word / the line",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:878"
+    "mockups/room-tui.mjs:786"
    ]
   }
  ],
@@ -292,7 +292,7 @@
    "args": "[@names…] [3h|today|since 9am] [words] [raw]",
    "desc": "filter the Stream: agents and projects (any of them), a time window, words (all of them), raw = tool lines too; alone clears",
    "src": [
-    "mockups/room-tui.mjs:623"
+    "mockups/room-tui.mjs:602"
    ],
    "where": "the hyprpi Stream box"
   },
@@ -301,7 +301,7 @@
    "args": "N | all",
    "desc": "how far back the stream goes (N interactions; default 200)",
    "src": [
-    "mockups/room-tui.mjs:631"
+    "mockups/room-tui.mjs:610"
    ],
    "where": "the hyprpi Stream box"
   },

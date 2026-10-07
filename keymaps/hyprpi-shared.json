@@ -2,7 +2,7 @@
  "format": "keybinding-explorer-keymap/1",
  "generatedBy": "keymaps/gen-hyprpi.mjs",
  "source": "https://github.com/angusforbes/hyprpi",
- "sourceCommit": "8620bfbdd1d4fe1b003af883e135b1a9c7c6e35c",
+ "sourceCommit": "e226db9ad20417cee46758a2b336c1263adbd915",
  "id": "hyprpi-shared",
  "shared": true,
  "about": "The message box every hyprpi panel shares (lib/tui/input-box.mjs)",
