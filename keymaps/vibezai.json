@@ -1,0 +1,1160 @@
+{
+ "format": "keybinding-explorer-keymap/1",
+ "id": "vibezai",
+ "app": "vibezAI",
+ "about": "Apple Music in the terminal (a fork of vibez)",
+ "match": [
+  "vibez",
+  "vibezai",
+  "apple music",
+  "music"
+ ],
+ "focus": {
+  "class": [
+   "^org\\.omarchy\\.vibez$"
+  ],
+  "title": [
+   "^vibez(AI)?$"
+  ]
+ },
+ "generatedBy": "keymaps/gen-vibezai.mjs",
+ "source": "https://github.com/angusforbes/vibezAI",
+ "sourceCommit": "25410b152c22c57d2497c576dfd86b7e68d657af",
+ "bindings": [
+  {
+   "mods": "",
+   "key": "SPACE",
+   "desc": "Play / pause",
+   "section": "Tracks",
+   "tea": "space",
+   "src": [
+    "internal/tui/model.go:1217",
+    "internal/tui/model.go:1394",
+    "internal/tui/model.go:1550",
+    "internal/tui/model.go:2005"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "UP",
+   "desc": "Move the highlight up (playback doesn't change)",
+   "more": "Move the highlight without changing playback",
+   "section": "Tracks",
+   "tea": "up",
+   "src": [
+    "internal/tui/model.go:1331",
+    "internal/tui/model.go:1917",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2163"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "DOWN",
+   "desc": "Move the highlight down (playback doesn't change)",
+   "more": "Move the highlight without changing playback",
+   "section": "Tracks",
+   "tea": "down",
+   "src": [
+    "internal/tui/model.go:1331",
+    "internal/tui/model.go:1912",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2159"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "RETURN",
+   "desc": "Play the highlighted track; on the playing track, restart it",
+   "section": "Tracks",
+   "tea": "enter",
+   "src": [
+    "internal/tui/model.go:1212",
+    "internal/tui/model.go:1264",
+    "internal/tui/model.go:1532",
+    "internal/tui/model.go:2195"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "Q",
+   "desc": "Put the highlight back on the playing track",
+   "section": "Tracks",
+   "tea": "q",
+   "src": [
+    "internal/tui/model.go:2175",
+    "internal/tui/model.go:71"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "N",
+   "desc": "Next",
+   "more": "Next / previous",
+   "section": "Tracks",
+   "tea": "n",
+   "src": [
+    "internal/tui/model.go:2008"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "P",
+   "desc": "Previous",
+   "more": "Next / previous",
+   "section": "Tracks",
+   "tea": "p",
+   "src": [
+    "internal/tui/model.go:2014"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "LEFT",
+   "desc": "Seek back 10 s",
+   "more": "Seek ±10 s",
+   "section": "Tracks",
+   "tea": "left",
+   "src": [
+    "internal/tui/model.go:1221",
+    "internal/tui/model.go:1341",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2088"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "RIGHT",
+   "desc": "Seek forward 10 s",
+   "more": "Seek ±10 s",
+   "section": "Tracks",
+   "tea": "right",
+   "src": [
+    "internal/tui/model.go:1219",
+    "internal/tui/model.go:1346",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2100"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "D",
+   "desc": "Remove the highlighted track",
+   "section": "Tracks",
+   "tea": "d",
+   "src": [
+    "internal/tui/queue_nav.go:295"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "D",
+   "desc": "Cut everything from the highlight down",
+   "more": "Cut everything from the highlight down / everything above it",
+   "section": "Tracks",
+   "tea": "D",
+   "src": [
+    "internal/tui/queue_nav.go:303"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "D",
+   "desc": "Cut everything above the highlight",
+   "more": "Cut everything from the highlight down / everything above it",
+   "section": "Tracks",
+   "tea": "ctrl+shift+d",
+   "src": [
+    "internal/tui/model.go:1937",
+    "internal/tui/queue_nav.go:306",
+    "internal/tui/views/about.go:50"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "K",
+   "desc": "Move the highlighted track up",
+   "more": "Move the highlighted track up / down",
+   "section": "Tracks",
+   "tea": "K",
+   "src": [
+    "internal/tui/queue_nav.go:276",
+    "internal/tui/queue_nav.go:280"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "J",
+   "desc": "Move the highlighted track down",
+   "more": "Move the highlighted track up / down",
+   "section": "Tracks",
+   "tea": "J",
+   "src": [
+    "internal/tui/queue_nav.go:276"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "LEFT",
+   "desc": "Move the highlighted track up",
+   "more": "Move the highlighted track up / down",
+   "section": "Tracks",
+   "tea": "shift+left",
+   "src": [
+    "internal/tui/queue_nav.go:276",
+    "internal/tui/queue_nav.go:280"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "RIGHT",
+   "desc": "Move the highlighted track down",
+   "more": "Move the highlighted track up / down",
+   "section": "Tracks",
+   "tea": "shift+right",
+   "src": [
+    "internal/tui/queue_nav.go:276"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "UP",
+   "desc": "Jump the highlight to the top",
+   "more": "Jump the highlight to the top / bottom",
+   "section": "Tracks",
+   "tea": "shift+up",
+   "src": [
+    "internal/tui/model.go:2167"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "DOWN",
+   "desc": "Jump the highlight to the bottom",
+   "more": "Jump the highlight to the top / bottom",
+   "section": "Tracks",
+   "tea": "shift+down",
+   "src": [
+    "internal/tui/model.go:2171"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "R",
+   "desc": "Insert five related songs after the highlighted track, once",
+   "section": "Tracks",
+   "tea": "R",
+   "src": [
+    "internal/tui/model.go:2058"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "T",
+   "desc": "Insert five random songs from your library after the highlighted track",
+   "section": "Tracks",
+   "tea": "T",
+   "src": [
+    "internal/tui/model.go:2079"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "F",
+   "desc": "Apple radio on / off",
+   "more": "Apple radio on / off: while on, each track that starts playing gets one song from its Apple Music station inserted right after it, once per track; see Apple radio and AI radio",
+   "section": "Tracks",
+   "tea": "F",
+   "src": [
+    "internal/tui/model.go:2067"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "A",
+   "desc": "AI radio on / off",
+   "more": "AI radio on / off: while on, the AI in charge (Claude Code, or ChatGPT after :ai gpt) picks one song to follow each track that starts playing, from that track and the ten before it; the pick is found on Apple Music and inserted right after it. Apple radio and AI radio switch each other off; see Apple radio and AI radio",
+   "section": "Tracks",
+   "tea": "A",
+   "src": [
+    "internal/tui/model.go:2073"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "S",
+   "desc": "Jump to a random track",
+   "section": "Tracks",
+   "tea": "s",
+   "src": [
+    "internal/tui/model.go:2049"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "S",
+   "desc": "Shuffle Tracks and play from the top",
+   "section": "Tracks",
+   "tea": "S",
+   "src": [
+    "internal/tui/model.go:2044"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "R",
+   "desc": "Cycle repeat",
+   "section": "Tracks",
+   "tea": "r",
+   "src": [
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2028",
+    "internal/tui/views/equalizer.go:69"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "C",
+   "desc": "Clear the list",
+   "section": "Tracks",
+   "tea": "c",
+   "src": [
+    "internal/tui/model.go:2179"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "TAB",
+   "desc": "Move the keys to Search",
+   "section": "Tracks",
+   "tea": "tab",
+   "src": [
+    "internal/tui/model.go:1287",
+    "internal/tui/model.go:1477",
+    "internal/tui/model.go:1537",
+    "internal/tui/model.go:1936"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "APOSTROPHE",
+   "desc": "Move the keys to Search and start typing into the AM or AI prompt",
+   "section": "Tracks",
+   "tea": "ctrl+'",
+   "src": [
+    "internal/tui/model.go:1228",
+    "internal/tui/model.go:1477",
+    "internal/tui/model.go:2146"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "SEMICOLON",
+   "desc": "Command mode",
+   "section": "Tracks",
+   "tea": ":",
+   "src": [
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1969"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "Y",
+   "desc": "Lyrics",
+   "more": "Lyrics / equalizer / about; Tab, esc or the same key again closes the panel and returns to the column you came from. About takes no other keys but ctrl+shift+d (the original author's Ko-fi page) and ctrl+shift+g (this fork on GitHub), each opened in your browser",
+   "section": "Tracks",
+   "tea": "y",
+   "src": [
+    "internal/tui/model.go:87"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "E",
+   "desc": "Equalizer",
+   "more": "Lyrics / equalizer / about; Tab, esc or the same key again closes the panel and returns to the column you came from. About takes no other keys but ctrl+shift+d (the original author's Ko-fi page) and ctrl+shift+g (this fork on GitHub), each opened in your browser",
+   "section": "Tracks",
+   "tea": "e",
+   "src": [
+    "internal/tui/model.go:97",
+    "internal/tui/model.go:101"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "SLASH",
+   "desc": "About",
+   "more": "Lyrics / equalizer / about; Tab, esc or the same key again closes the panel and returns to the column you came from. About takes no other keys but ctrl+shift+d (the original author's Ko-fi page) and ctrl+shift+g (this fork on GitHub), each opened in your browser",
+   "section": "Tracks",
+   "tea": "?",
+   "src": [
+    "internal/tui/model.go:1936",
+    "internal/tui/model.go:112",
+    "internal/tui/model.go:116"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "APOSTROPHE",
+   "desc": "Start or stop typing into the prompt (AM and AI); nothing is looked up while you type",
+   "section": "Search",
+   "tea": "ctrl+'",
+   "src": [
+    "internal/tui/model.go:1228",
+    "internal/tui/model.go:1477",
+    "internal/tui/model.go:2146"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "SLASH",
+   "desc": "Cycle the source: AM → AI → AJ (Claude+Jev) → SV (saved lists) → FE (recommendations) → AM",
+   "more": "Cycle the source: AM → AI → AJ (Claude+Jev) → SV (saved lists) → FE (recommendations) → AM; text already typed is looked up when switching to AI or AJ, AM waits for enter; SV and FE take no text, so the typed text is hidden there and shows again with AM, AI or AJ",
+   "section": "Search",
+   "tea": "ctrl+/",
+   "src": [
+    "internal/tui/model.go:1246",
+    "internal/tui/model.go:1477",
+    "internal/tui/model.go:1990"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "RETURN",
+   "desc": "While typing: run the search or AI lookup and stop typing",
+   "more": "While typing: search (AM) or look up (AI) the text and stop typing. Otherwise: play the track highlighted in Tracks",
+   "section": "Search",
+   "tea": "enter",
+   "src": [
+    "internal/tui/model.go:1212",
+    "internal/tui/model.go:1264",
+    "internal/tui/model.go:1532",
+    "internal/tui/model.go:2195"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "SPACE",
+   "desc": "Play / pause (not while typing)",
+   "section": "Search",
+   "tea": "space",
+   "src": [
+    "internal/tui/model.go:1217",
+    "internal/tui/model.go:1394",
+    "internal/tui/model.go:1550",
+    "internal/tui/model.go:2005"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "RIGHT",
+   "desc": "Open or fold the highlighted header, album or playlist (on a ± row: five more or fewer)",
+   "more": "Open or fold a section header (a saved list opens whole), grow or shrink a section by five, or open an album or playlist to its tracks and fold it again",
+   "section": "Search",
+   "tea": "right",
+   "src": [
+    "internal/tui/model.go:1219",
+    "internal/tui/model.go:1346",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2100"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "RETURN",
+   "desc": "Open or fold the highlighted header, album or playlist (on a ± row: five more or fewer)",
+   "more": "Open or fold a section header (a saved list opens whole), grow or shrink a section by five, or open an album or playlist to its tracks and fold it again",
+   "section": "Search",
+   "tea": "ctrl+enter",
+   "src": [
+    "internal/tui/model.go:1219",
+    "internal/tui/model.go:1990"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "UP",
+   "desc": "Move the Search highlight up",
+   "more": "Move the highlight",
+   "section": "Search",
+   "tea": "ctrl+up",
+   "src": [
+    "internal/tui/model.go:1320",
+    "internal/tui/model.go:1990"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "DOWN",
+   "desc": "Move the Search highlight down",
+   "more": "Move the highlight",
+   "section": "Search",
+   "tea": "ctrl+down",
+   "src": [
+    "internal/tui/model.go:1320",
+    "internal/tui/model.go:1990",
+    "internal/tui/model.go:1323"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "UP",
+   "desc": "Move the highlight in Tracks up, without leaving Search",
+   "more": "Move the highlight in Tracks without leaving Search",
+   "section": "Search",
+   "tea": "up",
+   "src": [
+    "internal/tui/model.go:1331",
+    "internal/tui/model.go:1917",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2163"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "DOWN",
+   "desc": "Move the highlight in Tracks down, without leaving Search",
+   "more": "Move the highlight in Tracks without leaving Search",
+   "section": "Search",
+   "tea": "down",
+   "src": [
+    "internal/tui/model.go:1331",
+    "internal/tui/model.go:1912",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2159"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "UP",
+   "desc": "Sweep-select upwards: mark the highlighted item and everything passed over",
+   "more": "Sweep-select: mark the highlighted item and everything passed over",
+   "section": "Search",
+   "tea": "ctrl+shift+up",
+   "src": [
+    "internal/tui/model.go:1291",
+    "internal/tui/model.go:1990",
+    "internal/tui/model.go:1294"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "DOWN",
+   "desc": "Sweep-select downwards: mark the highlighted item and everything passed over",
+   "more": "Sweep-select: mark the highlighted item and everything passed over",
+   "section": "Search",
+   "tea": "ctrl+shift+down",
+   "src": [
+    "internal/tui/model.go:1291",
+    "internal/tui/model.go:1990"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "RIGHT",
+   "desc": "Toggle the highlighted item in or out of the selection",
+   "more": "Toggle the highlighted item in or out of the selection; on an opened album or playlist its listed tracks go with it, and dropping one of them drops the collection's mark",
+   "section": "Search",
+   "tea": "ctrl+right",
+   "src": [
+    "internal/tui/model.go:1299",
+    "internal/tui/model.go:1990"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "LEFT",
+   "desc": "Clear the selection; pressed again before anything changes, bring it back",
+   "section": "Search",
+   "tea": "ctrl+left",
+   "src": [
+    "internal/tui/model.go:1304",
+    "internal/tui/model.go:1990"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "DELETE",
+   "desc": "SV: delete the highlighted list, from disk and from the panel",
+   "section": "Search",
+   "tea": "ctrl+delete",
+   "src": [
+    "internal/tui/model.go:1311"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "COMMA",
+   "desc": "Add the selection, or the highlighted item, to Tracks",
+   "more": "Add the selection, or the highlighted item, to Tracks; never starts playback (with nothing playing, space starts the list)",
+   "section": "Search",
+   "tea": "ctrl+,",
+   "src": [
+    "internal/tui/model.go:1314",
+    "internal/tui/model.go:1990"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "PERIOD",
+   "desc": "The same, and start the first song",
+   "section": "Search",
+   "tea": "ctrl+.",
+   "src": [
+    "internal/tui/model.go:1317",
+    "internal/tui/model.go:1990"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "TAB",
+   "desc": "Move the keys back to Tracks",
+   "more": "Move the keys back to Tracks; while typing, esc only stops typing",
+   "section": "Search",
+   "tea": "tab",
+   "src": [
+    "internal/tui/model.go:1287",
+    "internal/tui/model.go:1477",
+    "internal/tui/model.go:1537",
+    "internal/tui/model.go:1936"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "",
+   "key": "ESCAPE",
+   "desc": "Move the keys back to Tracks; while typing, only stop typing",
+   "more": "Move the keys back to Tracks; while typing, esc only stops typing",
+   "section": "Search",
+   "tea": "esc",
+   "src": [
+    "internal/tui/model.go:1237",
+    "internal/tui/model.go:1477",
+    "internal/tui/model.go:1529",
+    "internal/tui/model.go:1923"
+   ],
+   "from": "README.md"
+  },
+  {
+   "mods": "CTRL",
+   "key": "SEMICOLON",
+   "desc": "Start or stop typing into the prompt (same as ctrl+'; the two keys sit side by side)",
+   "section": "Search",
+   "tea": "ctrl+;",
+   "src": [
+    "internal/tui/model.go:1228",
+    "internal/tui/model.go:1477",
+    "internal/tui/model.go:2146"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "X",
+   "desc": "Remove the highlighted track (same as d)",
+   "section": "Tracks",
+   "tea": "x",
+   "src": [
+    "internal/tui/queue_nav.go:295"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "DELETE",
+   "desc": "Remove the highlighted track (same as d); while typing in Search: delete the character after the cursor",
+   "section": "Tracks",
+   "tea": "delete",
+   "src": [
+    "internal/tui/model.go:1366",
+    "internal/tui/queue_nav.go:295"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "EQUAL",
+   "desc": "Volume up",
+   "section": "Tracks",
+   "tea": "+",
+   "src": [
+    "internal/tui/model.go:2020"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "EQUAL",
+   "desc": "Volume up",
+   "section": "Tracks",
+   "tea": "=",
+   "src": [
+    "internal/tui/model.go:2020"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "MINUS",
+   "desc": "Volume down",
+   "section": "Tracks",
+   "tea": "-",
+   "src": [
+    "internal/tui/model.go:2024"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "J",
+   "desc": "Move the highlight down (like ↓); in Lyrics: scroll down",
+   "section": "Tracks",
+   "tea": "j",
+   "src": [
+    "internal/tui/model.go:1912",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2159",
+    "internal/tui/model.go:4290"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "K",
+   "desc": "Move the highlight up (like ↑); in Lyrics: scroll up",
+   "section": "Tracks",
+   "tea": "k",
+   "src": [
+    "internal/tui/model.go:1917",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2163",
+    "internal/tui/model.go:4286"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "G",
+   "desc": "Highlight the first track; in Lyrics: jump to the top",
+   "section": "Tracks",
+   "tea": "g",
+   "src": [
+    "internal/tui/model.go:2183",
+    "internal/tui/views/lyrics.go:99"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "G",
+   "desc": "Highlight the last track; in Lyrics: jump to the bottom",
+   "section": "Tracks",
+   "tea": "G",
+   "src": [
+    "internal/tui/model.go:1920",
+    "internal/tui/model.go:2191",
+    "internal/tui/views/lyrics.go:101"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "LEFT",
+   "desc": "Move the cursor left in the prompt",
+   "section": "Search prompt (typing)",
+   "tea": "left",
+   "src": [
+    "internal/tui/model.go:1221",
+    "internal/tui/model.go:1341",
+    "internal/tui/model.go:1981",
+    "internal/tui/model.go:2088"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "HOME",
+   "desc": "Cursor to the start of the prompt",
+   "section": "Search prompt (typing)",
+   "tea": "home",
+   "src": [
+    "internal/tui/model.go:1221",
+    "internal/tui/model.go:1351"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "CTRL",
+   "key": "A",
+   "desc": "Cursor to the start of the prompt",
+   "section": "Search prompt (typing)",
+   "tea": "ctrl+a",
+   "src": [
+    "internal/tui/model.go:1221",
+    "internal/tui/model.go:1351"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "END",
+   "desc": "Cursor to the end of the prompt",
+   "section": "Search prompt (typing)",
+   "tea": "end",
+   "src": [
+    "internal/tui/model.go:1221",
+    "internal/tui/model.go:1354"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "CTRL",
+   "key": "E",
+   "desc": "Cursor to the end of the prompt",
+   "section": "Search prompt (typing)",
+   "tea": "ctrl+e",
+   "src": [
+    "internal/tui/model.go:1221",
+    "internal/tui/model.go:1354"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "BACKSPACE",
+   "desc": "Delete the character before the cursor",
+   "section": "Search prompt (typing)",
+   "tea": "backspace",
+   "src": [
+    "internal/tui/model.go:1221",
+    "internal/tui/model.go:1357",
+    "internal/tui/model.go:1546",
+    "internal/tui/views/library.go:303"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "CTRL",
+   "key": "W",
+   "desc": "Delete the word before the cursor",
+   "section": "Search prompt (typing)",
+   "tea": "ctrl+w",
+   "src": [
+    "internal/tui/model.go:1221",
+    "internal/tui/model.go:1374"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "CTRL",
+   "key": "U",
+   "desc": "Delete everything before the cursor",
+   "section": "Search prompt (typing)",
+   "tea": "ctrl+u",
+   "src": [
+    "internal/tui/model.go:1221",
+    "internal/tui/model.go:1388"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "H",
+   "desc": "Equalizer: previous band (like ←)",
+   "section": "Equalizer",
+   "tea": "h",
+   "src": [
+    "internal/tui/model.go:1981",
+    "internal/tui/views/equalizer.go:50"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "L",
+   "desc": "Equalizer: next band (like →)",
+   "section": "Equalizer",
+   "tea": "l",
+   "src": [
+    "internal/tui/model.go:1981",
+    "internal/tui/views/equalizer.go:54",
+    "internal/tui/model.go:56"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "0",
+   "desc": "Equalizer: reset the band",
+   "section": "Equalizer",
+   "tea": "0",
+   "src": [
+    "internal/tui/model.go:1981",
+    "internal/tui/views/equalizer.go:66"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "CTRL SHIFT",
+   "key": "G",
+   "desc": "About panel: open this fork on GitHub",
+   "section": "About",
+   "tea": "ctrl+shift+g",
+   "src": [
+    "internal/tui/model.go:1937",
+    "internal/tui/views/about.go:52"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "CTRL",
+   "key": "C",
+   "desc": "Quit",
+   "section": "Tracks",
+   "tea": "ctrl+c",
+   "src": [
+    "internal/tui/model.go:1173"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "SHIFT",
+   "key": "TAB",
+   "desc": "Move the keys back to Tracks (same as Tab)",
+   "section": "Search",
+   "tea": "shift+tab",
+   "src": [
+    "internal/tui/model.go:1287",
+    "internal/tui/model.go:1477",
+    "internal/tui/model.go:1936",
+    "internal/tui/model.go:2130"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "PRIOR",
+   "desc": "Page up in the Search list",
+   "section": "Search",
+   "tea": "pgup",
+   "src": [
+    "internal/tui/model.go:1328",
+    "internal/tui/views/search.go:1229"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "NEXT",
+   "desc": "Page down in the Search list",
+   "section": "Search",
+   "tea": "pgdown",
+   "src": [
+    "internal/tui/model.go:1328",
+    "internal/tui/views/search.go:1238"
+   ],
+   "from": "source"
+  },
+  {
+   "mods": "",
+   "key": "A",
+   "desc": "Add the highlighted Search track to Tracks",
+   "section": "Search",
+   "tea": "a",
+   "src": [
+    "internal/tui/model.go:2209"
+   ],
+   "from": "source"
+  }
+ ],
+ "commands": [
+  {
+   "cmd": "save",
+   "args": "[name]",
+   "desc": "Save Tracks as a named list; without a name it is dated and named after the songs",
+   "where": "Anywhere but About: Tracks, Search (when not typing), Lyrics, Equalizer and the debug log",
+   "src": [
+    "internal/tui/model.go:1497",
+    "internal/tui/model.go:1645"
+   ],
+   "whereSrc": [
+    "internal/tui/model.go:1969",
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1934"
+   ]
+  },
+  {
+   "cmd": "quality",
+   "args": "<high|standard|256|64>",
+   "desc": "Set Apple Music AAC bitrate",
+   "where": "Anywhere but About: Tracks, Search (when not typing), Lyrics, Equalizer and the debug log",
+   "src": [
+    "internal/tui/model.go:1498",
+    "internal/tui/model.go:1616"
+   ],
+   "whereSrc": [
+    "internal/tui/model.go:1969",
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1934"
+   ]
+  },
+  {
+   "cmd": "ai",
+   "args": "<cc|gpt>",
+   "desc": "Which AI answers the AI source and AI radio: Claude Code (cc, default) or ChatGPT (gpt); bare :ai shows it",
+   "where": "Anywhere but About: Tracks, Search (when not typing), Lyrics, Equalizer and the debug log",
+   "src": [
+    "internal/tui/model.go:1499",
+    "internal/tui/model.go:1580"
+   ],
+   "whereSrc": [
+    "internal/tui/model.go:1969",
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1934"
+   ]
+  },
+  {
+   "cmd": "model",
+   "args": "<name|default>",
+   "desc": "Model the AI in charge uses; bare :model shows it with the effort",
+   "where": "Anywhere but About: Tracks, Search (when not typing), Lyrics, Equalizer and the debug log",
+   "src": [
+    "internal/tui/model.go:1500",
+    "internal/tui/model.go:1583"
+   ],
+   "whereSrc": [
+    "internal/tui/model.go:1969",
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1934"
+   ]
+  },
+  {
+   "cmd": "effort",
+   "args": "<level|default>",
+   "desc": "Effort the AI in charge spends (the levels depend on the AI); bare :effort shows it",
+   "where": "Anywhere but About: Tracks, Search (when not typing), Lyrics, Equalizer and the debug log",
+   "src": [
+    "internal/tui/model.go:1501",
+    "internal/tui/model.go:1586"
+   ],
+   "whereSrc": [
+    "internal/tui/model.go:1969",
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1934"
+   ]
+  },
+  {
+   "cmd": "art",
+   "args": "",
+   "desc": "Album cover at the left of Now Playing on/off: a real picture where the terminal draws sixels, coloured blocks elsewhere",
+   "where": "Anywhere but About: Tracks, Search (when not typing), Lyrics, Equalizer and the debug log",
+   "src": [
+    "internal/tui/model.go:1502",
+    "internal/tui/model.go:1589"
+   ],
+   "whereSrc": [
+    "internal/tui/model.go:1969",
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1934"
+   ]
+  },
+  {
+   "cmd": "about",
+   "args": "",
+   "desc": "Show information about vibez",
+   "where": "Anywhere but About: Tracks, Search (when not typing), Lyrics, Equalizer and the debug log",
+   "src": [
+    "internal/tui/model.go:1503",
+    "internal/tui/model.go:1568"
+   ],
+   "whereSrc": [
+    "internal/tui/model.go:1969",
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1934"
+   ]
+  },
+  {
+   "cmd": "debug-logs",
+   "args": "",
+   "desc": "Toggle debug log panel",
+   "where": "Anywhere but About: Tracks, Search (when not typing), Lyrics, Equalizer and the debug log",
+   "src": [
+    "internal/tui/model.go:1504",
+    "internal/tui/model.go:1576"
+   ],
+   "whereSrc": [
+    "internal/tui/model.go:1969",
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1934"
+   ]
+  },
+  {
+   "cmd": "q",
+   "args": "",
+   "desc": "Quit (:quit works too)",
+   "aliases": [
+    "quit"
+   ],
+   "where": "Anywhere but About: Tracks, Search (when not typing), Lyrics, Equalizer and the debug log",
+   "src": [
+    "internal/tui/model.go:1505",
+    "internal/tui/model.go:1562"
+   ],
+   "whereSrc": [
+    "internal/tui/model.go:1969",
+    "internal/tui/model.go:1208",
+    "internal/tui/model.go:1934"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "angusforbes.universal-keybinding-explorer",
+  "name": "Universal Keybinding Explorer",
+  "version": "0.2.0",
+  "author": "Angus Forbes",
+  "license": "MIT",
+  "description": "Learn mode for keys: SUPER+ALT+K, then press any key or chord to see what it does: your Hyprland/Omarchy bindings and, for apps with a keymap, the app's own keys and ':' commands. Explains only; nothing is sent anywhere.",
+  "kinds": ["overlay"],
+  "keepLoaded": true,
+  "entryPoints": { "overlay": "Explorer.qml" }
+}
