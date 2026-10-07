@@ -2,7 +2,7 @@
  "format": "keybinding-explorer-keymap/1",
  "generatedBy": "keymaps/gen-hyprpi.mjs",
  "source": "https://github.com/angusforbes/hyprpi",
- "sourceCommit": "1ef2b2f8b1709d76640bb62e733249c70bff7c2d",
+ "sourceCommit": "8620bfbdd1d4fe1b003af883e135b1a9c7c6e35c",
  "id": "hyprpi-stream",
  "app": "hyprpi Stream",
  "about": "hyprpi's Stream panel: this world's room, messages and activity",
@@ -68,7 +68,7 @@
    "desc": "Stream view: full → compact → topics → all activity",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:878"
+    "mockups/room-tui.mjs:872"
    ],
    "seq": "\u0006"
   },
@@ -96,7 +96,7 @@
    "desc": "Pick the previous Stream row",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:860"
+    "mockups/room-tui.mjs:854"
    ],
    "seq": "\u001b[1;3A"
   },
@@ -106,7 +106,7 @@
    "desc": "Pick the next Stream row",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:860"
+    "mockups/room-tui.mjs:854"
    ],
    "seq": "\u001b[1;3B"
   },
@@ -116,7 +116,7 @@
    "desc": "Pick the oldest Stream row",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:860"
+    "mockups/room-tui.mjs:854"
    ],
    "seq": "\u001b[1;3H"
   },
@@ -126,7 +126,7 @@
    "desc": "No row picked (back to the newest)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:860"
+    "mockups/room-tui.mjs:854"
    ],
    "seq": "\u001b[1;3F"
   },
@@ -136,7 +136,7 @@
    "desc": "Scroll the Stream up a line",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:852"
+    "mockups/room-tui.mjs:846"
    ],
    "seq": "\u001b[1;5A"
   },
@@ -146,7 +146,7 @@
    "desc": "Scroll the Stream down a line",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:852"
+    "mockups/room-tui.mjs:846"
    ],
    "seq": "\u001b[1;5B"
   },
@@ -156,7 +156,7 @@
    "desc": "Scroll the Stream up a page",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:852"
+    "mockups/room-tui.mjs:846"
    ],
    "seq": "\u001b[5~"
   },
@@ -166,7 +166,7 @@
    "desc": "Scroll the Stream down a page",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:852"
+    "mockups/room-tui.mjs:846"
    ],
    "seq": "\u001b[6~"
   },
@@ -176,7 +176,7 @@
    "desc": "Scroll to the oldest",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:852"
+    "mockups/room-tui.mjs:846"
    ],
    "seq": "\u001b[1;5H"
   },
@@ -186,7 +186,7 @@
    "desc": "Back to the newest",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:852"
+    "mockups/room-tui.mjs:846"
    ],
    "seq": "\u001b[1;5F"
   },
@@ -196,7 +196,7 @@
    "desc": "Drop the box's selection, else the picked row, else the /stream filter, else the note; in help: back to the Stream",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:922"
+    "mockups/room-tui.mjs:916"
    ],
    "seq": "\u001b"
   },
@@ -236,7 +236,7 @@
    "desc": "A new agent here",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:877"
+    "mockups/room-tui.mjs:871"
    ],
    "seq": "\u000e"
   },
@@ -246,7 +246,7 @@
    "desc": "An agent's name: jump to its window; a link or file: open it",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:895"
+    "mockups/room-tui.mjs:889"
    ]
   },
   {
@@ -255,7 +255,7 @@
    "desc": "Copy the whole message (Shift+drag: several)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:905"
+    "mockups/room-tui.mjs:899"
    ]
   },
   {
@@ -264,7 +264,7 @@
    "desc": "Scroll the Stream up 3 lines (wheel)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:916"
+    "mockups/room-tui.mjs:910"
    ]
   },
   {
@@ -273,7 +273,7 @@
    "desc": "Scroll the Stream down 3 lines (wheel)",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:916"
+    "mockups/room-tui.mjs:910"
    ]
   },
   {
@@ -282,7 +282,7 @@
    "desc": "On a world tab: switch to that world, like Ctrl+Tab. Drag over text: copy it when you let go; double / triple click in the box: select a word / the line",
    "section": "Stream",
    "src": [
-    "mockups/room-tui.mjs:884"
+    "mockups/room-tui.mjs:878"
    ]
   }
  ],

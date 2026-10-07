@@ -2,7 +2,7 @@
  "format": "keybinding-explorer-keymap/1",
  "generatedBy": "keymaps/gen-hyprpi.mjs",
  "source": "https://github.com/angusforbes/hyprpi",
- "sourceCommit": "1ef2b2f8b1709d76640bb62e733249c70bff7c2d",
+ "sourceCommit": "8620bfbdd1d4fe1b003af883e135b1a9c7c6e35c",
  "id": "hyprpi-projects",
  "app": "hyprpi projects",
  "about": "hyprpi's projects panel: this world's project board",
@@ -28,7 +28,7 @@
    "desc": "Send the box (a board command or a message); empty box: open the highlighted card, back to all projects, or put an item's handle in the box. Decisions view, empty box: take the recommended option",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:316"
+    "mockups/board-tui.mjs:333"
    ],
    "seq": "\r"
   },
@@ -38,7 +38,7 @@
    "desc": "The board's Enter, whatever is typed (Decisions: send)",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:315"
+    "mockups/board-tui.mjs:332"
    ],
    "seq": "\u001b[13;5u"
   },
@@ -48,17 +48,17 @@
    "desc": "Copy the highlighted (mouse-selected) text, else the box's selection or text (what SUPER+C sends)",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:302"
+    "mockups/board-tui.mjs:318"
    ],
    "seq": "\u001b[2;5~"
   },
   {
    "mods": "CTRL",
    "key": "Z",
-   "desc": "Undo in the box. (The board's own ^Z, undo a drop, is never reached: the box takes ^Z first)",
+   "desc": "Undo whichever came last: a drop / archive made here (if the box hasn't changed since), else the box's edits, then the drop",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:305"
+    "mockups/board-tui.mjs:321"
    ],
    "seq": "\u001a"
   },
@@ -68,7 +68,7 @@
    "desc": "Drop the box's selection, then the highlight, then the open card or help; Decisions: back to the cards. Never quits",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:319"
+    "mockups/board-tui.mjs:336"
    ],
    "seq": "\u001b"
   },
@@ -78,7 +78,7 @@
    "desc": "Cards ⇄ Decisions view",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:310"
+    "mockups/board-tui.mjs:327"
    ],
    "seq": "\u0006"
   },
@@ -88,7 +88,7 @@
    "desc": "Complete a /command, an item handle after @project, or an @project",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:326"
+    "mockups/board-tui.mjs:343"
    ],
    "seq": "\t"
   },
@@ -98,7 +98,7 @@
    "desc": "Complete an @agent",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:326"
+    "mockups/board-tui.mjs:343"
    ],
    "seq": "\u001b[Z"
   },
@@ -108,7 +108,7 @@
    "desc": "Next world",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:308"
+    "mockups/board-tui.mjs:325"
    ]
   },
   {
@@ -117,7 +117,7 @@
    "desc": "Previous world",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:309"
+    "mockups/board-tui.mjs:326"
    ]
   },
   {
@@ -126,7 +126,7 @@
    "desc": "Page up",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:328"
+    "mockups/board-tui.mjs:345"
    ],
    "seq": "\u001b[5~"
   },
@@ -136,7 +136,7 @@
    "desc": "Page down",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:328"
+    "mockups/board-tui.mjs:345"
    ],
    "seq": "\u001b[6~"
   },
@@ -146,7 +146,7 @@
    "desc": "Top of the board",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:328"
+    "mockups/board-tui.mjs:345"
    ],
    "seq": "\u001b[1;5H"
   },
@@ -156,7 +156,7 @@
    "desc": "Bottom of the board",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:328"
+    "mockups/board-tui.mjs:345"
    ],
    "seq": "\u001b[1;5F"
   },
@@ -166,7 +166,7 @@
    "desc": "Quit the panel",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:304"
+    "mockups/board-tui.mjs:320"
    ],
    "seq": "\u0011"
   },
@@ -213,7 +213,7 @@
   {
    "mods": "CTRL",
    "key": "D",
-   "desc": "Cards view: drop the highlighted item; on a project's header: archive the project (undo is not reachable)",
+   "desc": "Cards view: drop the highlighted item; on a project's header: archive the project (Ctrl+Z undoes it)",
    "section": "Projects",
    "src": [
     "lib/tui/board-view.mjs:831"
@@ -327,7 +327,7 @@
    "desc": "Decisions: put the current one off (to the end of the list)",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:344"
+    "mockups/board-tui.mjs:361"
    ],
    "seq": "\u001bl"
   },
@@ -337,7 +337,7 @@
    "desc": "Decisions: put the current one off (the same as Alt+L)",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:344"
+    "mockups/board-tui.mjs:361"
    ],
    "seq": "\u001bL"
   },
@@ -347,7 +347,7 @@
    "desc": "Highlight that card / item, fold or open a card's −/+ marker, switch to a world tab; double click a word: copy it; drag: select and copy",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:373"
+    "mockups/board-tui.mjs:390"
    ]
   },
   {
@@ -356,7 +356,7 @@
    "desc": "Copy the whole item",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:377"
+    "mockups/board-tui.mjs:394"
    ]
   },
   {
@@ -365,7 +365,7 @@
    "desc": "An @agent: jump to its window; a link: open it",
    "section": "Projects",
    "src": [
-    "mockups/board-tui.mjs:376"
+    "mockups/board-tui.mjs:393"
    ]
   }
  ],

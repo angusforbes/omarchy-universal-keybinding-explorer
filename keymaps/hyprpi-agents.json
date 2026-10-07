@@ -2,7 +2,7 @@
  "format": "keybinding-explorer-keymap/1",
  "generatedBy": "keymaps/gen-hyprpi.mjs",
  "source": "https://github.com/angusforbes/hyprpi",
- "sourceCommit": "1ef2b2f8b1709d76640bb62e733249c70bff7c2d",
+ "sourceCommit": "8620bfbdd1d4fe1b003af883e135b1a9c7c6e35c",
  "id": "hyprpi-agents",
  "app": "hyprpi agents",
  "about": "hyprpi's agents panel: this world's agents and projects",
