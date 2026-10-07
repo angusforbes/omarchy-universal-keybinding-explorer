@@ -32,8 +32,11 @@ Hyprland's Lua config.
     after it filter the list (`:ef` → `:effort`; when no name fits, descriptions are searched: `:bitrate` → `:quality`).
   - **Esc** or **Backspace** goes back to the Hyprland keys. **SUPER + ALT + K** leaves.
 
-Included app: **[vibezAI](https://github.com/angusforbes/vibezAI)** (a terminal Apple Music player): 78 keys and
-9 `:` commands, generated from its source.
+Included apps, each generated from its source:
+
+- **[vibezAI](https://github.com/angusforbes/vibezAI)** (a terminal Apple Music player): 78 keys and 9 `:` commands.
+- **[hyprpi](https://github.com/angusforbes/hyprpi)'s four panels**: agents, Stream, projects and Thoughts. Each has
+  its own keys and `/` commands, plus the message box they all share.
 
 ## Install
 
@@ -92,6 +95,9 @@ adding a file, with no code change and no restart.
 | `bindings[].section` | Groups the app's list (e.g. "Tracks", "Search") and prefixes the description |
 | `bindings[].desc` | What the key does, short enough for two lines |
 | `commands[]` | Optional typed commands: `cmd`, `args`, `desc`, optional `aliases`, and `where` (the views or parts of the app it works in) |
+| `prefix` | The key that opens the commands list and starts each command (default `:`; the hyprpi panels use `/`) |
+| `include` | Ids of shared keymaps whose keys and commands this app also has. The app's own entry wins when both have the same chord, or a command of the same name. |
+| `shared` | `true` for a keymap that only exists to be included (no `app`; it's never listed on its own). Example: `keymaps/hyprpi-shared.json`, the message box every hyprpi panel uses. |
 | `src`, `more`, … | For people and generators (where in the app's source a key is handled, the full text); the explorer ignores them |
 
 **Keep keymaps honest.** A keymap is best generated from the app's own source, so it can't drift.
@@ -103,6 +109,10 @@ adding a file, with no code change and no restart.
 - `:` commands come from the app's own command list.
 
 Run it with `node keymaps/gen-vibezai.mjs <path to a vibezAI checkout>` after the app's keys change.
+[`keymaps/gen-hyprpi.mjs`](keymaps/gen-hyprpi.mjs) does the same for hyprpi's panels:
+`node keymaps/gen-hyprpi.mjs <path to a hyprpi checkout>`. Those panels read raw terminal input, so each key is
+written as the escape sequence its handler compares against (`"\x1b[1;5A"`), and the generator decodes it into the
+explorer's chord (CTRL + UP).
 
 ## Adding an app with an agent
 

@@ -113,9 +113,11 @@ const PANELS = [
     match: ["hyprpi", "agents", "panel", "router"], title: "^hyprpi-router [A-Z]$",
     file: "mockups/agents-tui.mjs", from: /^function onKey\(d\)/, section: "Agents", cmdPanel: "mockups/agents-tui.mjs",
     keys: [
-      S("\r", "Run the /command in the box; empty box: the agent under the cursor (live: jump to its window · parked: revive it here · closed: resume it)"),
-      S("\t", "Complete a /command"),
-      S("\x1b", "Close help; with text in the box: drop its selection, else clear it"),
+      S("\r", "Run the /command in the box (text that isn't a /command is refused); empty box: open the row under the cursor (live agent: jump to its window · parked: revive it here · closed: resume it · project: its card in the projects panel)"),
+      S("\t", "Complete a /command (or /go @name); empty box: a hint that Ctrl+Tab switches world"),
+      S("\x1b[Z", "Only a hint: Ctrl+Tab switches world (Shift+Tab does nothing else)"),
+      S("\x1b[13;2u", "Nothing: this box is a single line (no new line)", { file: "lib/tui/input-box.mjs", from: /^\s*function key\(d\)/ }),
+      S("\x1b", "With text in the box: drop its selection, else clear it. Empty box: close help, cancel a pending close/kill, clear the note"),
       S("\x03", "Copy the box (its selection, else all); empty box: quit"),
       S("\x11", "Quit the panel"),
       S("\x0f", "Views: live · + parked / closed (and archived projects)"),
@@ -127,7 +129,9 @@ const PANELS = [
       S("\x1b[1;5H", "Cursor to the first agent"), S("\x1b[1;5F", "Cursor to the last row"),
       S("\x1b[5~", "Cursor up 5"), S("\x1b[6~", "Cursor down 5"),
       C("b === 16", "CTRL", "LEFT MOUSE BUTTON", "That agent, as Enter would (jump · revive · resume); on a project: its card"),
-      C("b === 0 && press", "", "LEFT MOUSE BUTTON", "Put the cursor on a row; on a project's @member: jump to that agent"),
+      C("b === 0 && press", "", "LEFT MOUSE BUTTON", "Put the cursor on a row; on a project's @member: jump to that agent. Double / triple click in the box: select a word / the line"),
+      C("b === 64 || b === 65", "", "MOUSE_UP", "Scroll the agent list up a line"),
+      C("b === 64 || b === 65", "", "MOUSE_DOWN", "Scroll the agent list down a line"),
     ],
   },
   {
@@ -147,13 +151,16 @@ const PANELS = [
       S("\x1b[1;5A", "Scroll the Stream up a line"), S("\x1b[1;5B", "Scroll the Stream down a line"),
       S("\x1b[5~", "Scroll the Stream up a page"), S("\x1b[6~", "Scroll the Stream down a page"),
       S("\x1b[1;5H", "Scroll to the oldest"), S("\x1b[1;5F", "Back to the newest"),
-      S("\x1b", "Drop the box's selection, else the picked row, else the /stream filter, else the note; in help: back", { re: /Esc: text selection/ }),
+      S("\x1b", "Drop the box's selection, else the picked row, else the /stream filter, else the note; in help: back to the Stream", { re: /Esc: text selection/ }),
       S("\x03", "Copy the box's selection, else the whole message; never quits"),
       S("\x1b[2;5~", "Copy the highlighted Stream text, else the box's selection (what SUPER+C sends)"),
       S("\x11", "Quit the panel"),
       S("\x0e", "A new agent here"),
       C("b === 16 && m[4] === \"M\"", "CTRL", "LEFT MOUSE BUTTON", "An agent's name: jump to its window; a link or file: open it"),
       C("b === 4 && inConvo", "SHIFT", "LEFT MOUSE BUTTON", "Copy the whole message (Shift+drag: several)"),
+      C("b === 64 || b === 65", "", "MOUSE_UP", "Scroll the Stream up 3 lines (wheel)"),
+      C("b === 64 || b === 65", "", "MOUSE_DOWN", "Scroll the Stream down 3 lines (wheel)"),
+      C("b === 0 && m[4] === \"M\" ? worldTabAt", "", "LEFT MOUSE BUTTON", "On a world tab: switch to that world, like Ctrl+Tab. Drag over text: copy it when you let go; double / triple click in the box: select a word / the line"),
     ],
   },
   {
@@ -161,8 +168,10 @@ const PANELS = [
     match: ["hyprpi", "projects", "board", "panel"], title: "^hyprpi-board [A-Z]$",
     file: "mockups/board-tui.mjs", from: /^function onKey\(d\)/, section: "Projects", cmdPanel: "board",
     keys: [
-      S("\r", "Send the box (a board command or a message); empty box: open the highlighted card, back to all projects, or put an item's handle in the box"),
+      S("\r", "Send the box (a board command or a message); empty box: open the highlighted card, back to all projects, or put an item's handle in the box. Decisions view, empty box: take the recommended option"),
       S("\x1b[13;5u", "The board's Enter, whatever is typed (Decisions: send)"),
+      S("\x1b[2;5~", "Copy the highlighted (mouse-selected) text, else the box's selection or text (what SUPER+C sends)"),
+      S("\x1a", "Undo in the box. (The board's own ^Z, undo a drop, is never reached: the box takes ^Z first)"),
       S("\x1b", "Drop the box's selection, then the highlight, then the open card or help; Decisions: back to the cards. Never quits"),
       S("\x06", "Cards ⇄ Decisions view"),
       S("\t", "Complete a /command, an item handle after @project, or an @project"),
@@ -174,14 +183,16 @@ const PANELS = [
       S("\x11", "Quit the panel"),
       { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x1b[1;5A", desc: "Highlight the previous card or item (Decisions: previous decision)" },
       { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x1b[1;5B", desc: "Highlight the next card or item (Decisions: next decision)" },
-      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x00", desc: "Fold / open the highlighted card" },
-      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x0f", desc: "Fold / open the highlighted card" },
-      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x04", desc: "Drop the highlighted item; on a project's header: archive the project" },
-      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x01", desc: "Archive (or unarchive) the highlighted item" },
-      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x14", desc: "Mark the highlighted item done" },
+      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x00", desc: "Fold / open the highlighted card (Cards view)" },
+      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x0f", desc: "Fold / open the highlighted card (Cards view)" },
+      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x04", desc: "Cards view: drop the highlighted item; on a project's header: archive the project (undo is not reachable)" },
+      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x01", desc: "Cards view: archive (or unarchive) the highlighted item" },
+      { file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /, seq: "\x14", desc: "Cards view: mark the highlighted item done" },
       ...[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => ({ code: "/^\\x1b([1-9])$/.exec(d)", file: "lib/tui/board-view.mjs", from: /^\s*function key\(d, /,
         desc: `Answer the highlighted decision with option ${n} (${"abcdefghi"[n - 1]})`, chord: { mods: "ALT", key: String(n) } })),
       S("\x1bl", "Decisions: put the current one off (to the end of the list)", { from: /^function decisionKey/ }),
+      S("\x1bL", "Decisions: put the current one off (the same as Alt+L)", { from: /^function decisionKey/ }),
+      C("b === 0 && press", "", "LEFT MOUSE BUTTON", "Highlight that card / item, fold or open a card's −/+ marker, switch to a world tab; double click a word: copy it; drag: select and copy"),
       C("b === 4 && press", "SHIFT", "LEFT MOUSE BUTTON", "Copy the whole item"),
       C("b === 16", "CTRL", "LEFT MOUSE BUTTON", "An @agent: jump to its window; a link: open it"),
     ],
@@ -194,7 +205,7 @@ const PANELS = [
       S("\r", "Talk to Thoughts (it remembers; it can ask agents and hand them work), or run the /command"),
       S("\x1b[13;5u", "The same as Enter"),
       S("\x1b", "Interrupt what's running; else close help. Never touches the box"),
-      S("\x14", "Keyword ⇄ AI mode"),
+      S("\x14", "Does nothing now (one window: just type); shows a hint on the old keyword ⇄ AI switch"),
       S("\x1b[1;5A", "Move the highlight up (scroll back through the thread)"), S("\x1b[1;5B", "Move the highlight down"),
       S("\x1b[5~", "Scroll back a page"), S("\x1b[6~", "Scroll forward a page"),
       S("\x1b[1;5H", "The oldest"), S("\x1b[1;5F", "Back to the newest, and follow"),
@@ -207,6 +218,10 @@ const PANELS = [
       S("\x1b[2;5~", "Copy the highlighted thread text, else the box's selection (what SUPER+C sends)"),
       S("\x11", "Quit the window"),
       C("b === 16 && m[4] === \"M\"", "CTRL", "LEFT MOUSE BUTTON", "An agent's name or an evidence line: jump to that agent's window"),
+      C("b === 64", "", "MOUSE_UP", "Scroll back through the thread"),
+      C("b === 65", "", "MOUSE_DOWN", "Scroll forward through the thread"),
+      C("b === 0 && m[4] === \"M\" ? worldTabAt", "", "LEFT MOUSE BUTTON", "Click a world's letter in the footer: switch to that world. Also: drag in the thread selects and copies; click a link or file path opens it; double / triple click in the box selects a word / the line"),
+      C("(b === 0 || b === 4) && m[4] === \"M\"", "SHIFT", "LEFT MOUSE BUTTON", "Copy the whole item you press on"),
     ],
   },
 ]
@@ -252,7 +267,18 @@ function boardCommands() {
     const name = unq(m[1]), text = unq(m[2])
     // "/todo @p text: add a Next item" → args "@p text", desc "add a Next item"; "the same as /fold" stays whole
     const u = text.startsWith(name) && text.indexOf(": ") > 0 ? text.indexOf(": ") : -1
-    out.push({ cmd: name.slice(1), args: u > 0 ? text.slice(name.length, u).trim() : "", desc: u > 0 ? text.slice(u + 2) : text, src: [`${file}:${i + 1}`] })
+    // no ": " ("/done N2 [N3 …] […] (note)", "/pause @p"): the args are what follows the name, up to a "(", and the desc is
+    // the parenthesis or a short one written here
+    const NOARG = { "/done": "mark items done, with how it was verified", "/drop": "drop items from a card", "/assign": "add (+) or remove (-) project members",
+      "/rename": "rename a project", "/pause": "pause a project", "/activate": "bring a paused or archived project back", "/help": "this list" }
+    let args = "", desc = text
+    if (u > 0) { args = text.slice(name.length, u).trim(); desc = text.slice(u + 2) }
+    else if (text.startsWith(name) && NOARG[name]) {
+      const rest = text.slice(name.length), p = rest.indexOf(" (")
+      args = (p < 0 ? rest : rest.slice(0, p)).trim()
+      desc = NOARG[name] + (p >= 0 && name !== "/activate" ? " · " + rest.slice(p + 2).replace(/\)$/, "") : "")
+    }
+    out.push({ cmd: name.slice(1), args, desc, src: [`${file}:${i + 1}`] })
   })
   return out
 }

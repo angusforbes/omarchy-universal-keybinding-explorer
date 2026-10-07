@@ -25,7 +25,7 @@
   {
    "mods": "",
    "key": "RETURN",
-   "desc": "Send the box (a board command or a message); empty box: open the highlighted card, back to all projects, or put an item's handle in the box",
+   "desc": "Send the box (a board command or a message); empty box: open the highlighted card, back to all projects, or put an item's handle in the box. Decisions view, empty box: take the recommended option",
    "section": "Projects",
    "src": [
     "mockups/board-tui.mjs:316"
@@ -41,6 +41,26 @@
     "mockups/board-tui.mjs:315"
    ],
    "seq": "\u001b[13;5u"
+  },
+  {
+   "mods": "CTRL",
+   "key": "INSERT",
+   "desc": "Copy the highlighted (mouse-selected) text, else the box's selection or text (what SUPER+C sends)",
+   "section": "Projects",
+   "src": [
+    "mockups/board-tui.mjs:302"
+   ],
+   "seq": "\u001b[2;5~"
+  },
+  {
+   "mods": "CTRL",
+   "key": "Z",
+   "desc": "Undo in the box. (The board's own ^Z, undo a drop, is never reached: the box takes ^Z first)",
+   "section": "Projects",
+   "src": [
+    "mockups/board-tui.mjs:305"
+   ],
+   "seq": "\u001a"
   },
   {
    "mods": "",
@@ -173,7 +193,7 @@
   {
    "mods": "CTRL",
    "key": "SPACE",
-   "desc": "Fold / open the highlighted card",
+   "desc": "Fold / open the highlighted card (Cards view)",
    "section": "Projects",
    "src": [
     "lib/tui/board-view.mjs:822"
@@ -183,7 +203,7 @@
   {
    "mods": "CTRL",
    "key": "O",
-   "desc": "Fold / open the highlighted card",
+   "desc": "Fold / open the highlighted card (Cards view)",
    "section": "Projects",
    "src": [
     "lib/tui/board-view.mjs:822"
@@ -193,7 +213,7 @@
   {
    "mods": "CTRL",
    "key": "D",
-   "desc": "Drop the highlighted item; on a project's header: archive the project",
+   "desc": "Cards view: drop the highlighted item; on a project's header: archive the project (undo is not reachable)",
    "section": "Projects",
    "src": [
     "lib/tui/board-view.mjs:810"
@@ -203,7 +223,7 @@
   {
    "mods": "CTRL",
    "key": "A",
-   "desc": "Archive (or unarchive) the highlighted item",
+   "desc": "Cards view: archive (or unarchive) the highlighted item",
    "section": "Projects",
    "src": [
     "lib/tui/board-view.mjs:844"
@@ -213,7 +233,7 @@
   {
    "mods": "CTRL",
    "key": "T",
-   "desc": "Mark the highlighted item done",
+   "desc": "Cards view: mark the highlighted item done",
    "section": "Projects",
    "src": [
     "lib/tui/board-view.mjs:848"
@@ -312,6 +332,25 @@
    "seq": "\u001bl"
   },
   {
+   "mods": "SHIFT ALT",
+   "key": "L",
+   "desc": "Decisions: put the current one off (the same as Alt+L)",
+   "section": "Projects",
+   "src": [
+    "mockups/board-tui.mjs:344"
+   ],
+   "seq": "\u001bL"
+  },
+  {
+   "mods": "",
+   "key": "LEFT MOUSE BUTTON",
+   "desc": "Highlight that card / item, fold or open a card's −/+ marker, switch to a world tab; double click a word: copy it; drag: select and copy",
+   "section": "Projects",
+   "src": [
+    "mockups/board-tui.mjs:373"
+   ]
+  },
+  {
    "mods": "SHIFT",
    "key": "LEFT MOUSE BUTTON",
    "desc": "Copy the whole item",
@@ -351,8 +390,8 @@
   },
   {
    "cmd": "done",
-   "args": "",
-   "desc": "/done N2 [N3 …] [how it was verified] (@p before the handles when several projects have one)",
+   "args": "N2 [N3 …] [how it was verified]",
+   "desc": "mark items done, with how it was verified · @p before the handles when several projects have one",
    "src": [
     "lib/tui/board-view.mjs:53"
    ],
@@ -360,8 +399,8 @@
   },
   {
    "cmd": "drop",
-   "args": "",
-   "desc": "/drop N2 [N3 …] (or /drop @p N2 …)",
+   "args": "N2 [N3 …]",
+   "desc": "drop items from a card · or /drop @p N2 …",
    "src": [
     "lib/tui/board-view.mjs:54"
    ],
@@ -378,8 +417,8 @@
   },
   {
    "cmd": "assign",
-   "args": "",
-   "desc": "/assign @p +@A -@B",
+   "args": "@p +@A -@B",
+   "desc": "add (+) or remove (-) project members",
    "src": [
     "lib/tui/board-view.mjs:56"
    ],
@@ -396,8 +435,8 @@
   },
   {
    "cmd": "rename",
-   "args": "",
-   "desc": "/rename @p @new",
+   "args": "@p @new",
+   "desc": "rename a project",
    "src": [
     "lib/tui/board-view.mjs:58"
    ],
@@ -423,8 +462,8 @@
   },
   {
    "cmd": "pause",
-   "args": "",
-   "desc": "/pause @p",
+   "args": "@p",
+   "desc": "pause a project",
    "src": [
     "lib/tui/board-view.mjs:61"
    ],
@@ -459,8 +498,8 @@
   },
   {
    "cmd": "activate",
-   "args": "",
-   "desc": "/activate @p (back from paused / archived)",
+   "args": "@p",
+   "desc": "bring a paused or archived project back",
    "src": [
     "lib/tui/board-view.mjs:65"
    ],

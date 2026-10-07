@@ -55,7 +55,7 @@
   {
    "mods": "CTRL",
    "key": "T",
-   "desc": "Keyword ⇄ AI mode",
+   "desc": "Does nothing now (one window: just type); shows a hint on the old keyword ⇄ AI switch",
    "section": "Thoughts",
    "src": [
     "mockups/search-tui.mjs:788"
@@ -217,6 +217,42 @@
    "section": "Thoughts",
    "src": [
     "mockups/search-tui.mjs:830"
+   ]
+  },
+  {
+   "mods": "",
+   "key": "MOUSE_UP",
+   "desc": "Scroll back through the thread",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:825"
+   ]
+  },
+  {
+   "mods": "",
+   "key": "MOUSE_DOWN",
+   "desc": "Scroll forward through the thread",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:826"
+   ]
+  },
+  {
+   "mods": "",
+   "key": "LEFT MOUSE BUTTON",
+   "desc": "Click a world's letter in the footer: switch to that world. Also: drag in the thread selects and copies; click a link or file path opens it; double / triple click in the box selects a word / the line",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:823"
+   ]
+  },
+  {
+   "mods": "SHIFT",
+   "key": "LEFT MOUSE BUTTON",
+   "desc": "Copy the whole item you press on",
+   "section": "Thoughts",
+   "src": [
+    "mockups/search-tui.mjs:832"
    ]
   }
  ],

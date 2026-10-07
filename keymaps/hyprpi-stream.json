@@ -193,7 +193,7 @@
   {
    "mods": "",
    "key": "ESCAPE",
-   "desc": "Drop the box's selection, else the picked row, else the /stream filter, else the note; in help: back",
+   "desc": "Drop the box's selection, else the picked row, else the /stream filter, else the note; in help: back to the Stream",
    "section": "Stream",
    "src": [
     "mockups/room-tui.mjs:922"
@@ -256,6 +256,33 @@
    "section": "Stream",
    "src": [
     "mockups/room-tui.mjs:905"
+   ]
+  },
+  {
+   "mods": "",
+   "key": "MOUSE_UP",
+   "desc": "Scroll the Stream up 3 lines (wheel)",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:916"
+   ]
+  },
+  {
+   "mods": "",
+   "key": "MOUSE_DOWN",
+   "desc": "Scroll the Stream down 3 lines (wheel)",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:916"
+   ]
+  },
+  {
+   "mods": "",
+   "key": "LEFT MOUSE BUTTON",
+   "desc": "On a world tab: switch to that world, like Ctrl+Tab. Drag over text: copy it when you let go; double / triple click in the box: select a word / the line",
+   "section": "Stream",
+   "src": [
+    "mockups/room-tui.mjs:884"
    ]
   }
  ],
