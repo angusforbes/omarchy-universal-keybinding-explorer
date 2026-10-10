@@ -42,7 +42,7 @@ Item {
   property var apps: []            // loaded keymap files
   property var app: null           // the app whose keys are explained, or null (Hyprland mode)
   property bool appAuto: false     // app mode came from the focused window at open
-  property var pendingFocus: null  // { class, title } of the window focused when SUPER+ALT+K was pressed
+  property var pendingFocus: null  // { class, title } of the window focused when SUPER+ALT+CTRL+K was pressed (`keybinding-explorer app`)
   property bool dryRunning: false
   // App mode views: "app" = only the app's own keys (default; an app key Hyprland grabs first is marked
   // "⚠ taken by Hyprland"), "all" = the app's keys plus every Hyprland bind as "Hyprland: …". F1 toggles (free in

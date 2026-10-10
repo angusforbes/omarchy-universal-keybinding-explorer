@@ -23,8 +23,8 @@ Hyprland's Lua config.
   description. Modifier words match in any order and with aliases ("win shift f", "super+shift+return",
   "control mod return"). Pressing CTRL, ALT or SUPER drops the word and goes back to chords.
 - **Apps.** A word that fits an app's name (e.g. "vibez") lists an **App** row first, above the Hyprland bindings
-  that launch it. Enter opens that app's keys. Pressing SUPER + ALT + K while that app's window is focused opens
-  straight in its context.
+  that launch it. Enter opens that app's keys. SUPER + ALT + K always opens at the top level (all your keys); SUPER + ALT + CTRL + K
+  opens straight in the focused window's app when a keymap matches it, and at the top level otherwise.
   - **App keys only** (the default view): only the app's keys are listed and matched. An app key that Hyprland binds too
     is marked "⚠ taken by Hyprland (…)", because Hyprland grabs it first and the app never receives it.
   - **F1** switches to **app + Hyprland keys**: Hyprland's bindings come back, shown as "Hyprland: …".
@@ -57,7 +57,7 @@ Requirements: Omarchy (omarchy-shell, Hyprland with the Lua config), `jq`, and `
 3. Add the binding and the submap from [`hypr/bindings.lua`](hypr/bindings.lua) to `~/.config/hypr/bindings.lua`.
    Hyprland reloads by itself; `hyprctl configerrors` should print nothing.
 
-Press SUPER + ALT + K. Esc or SUPER + ALT + K leaves.
+Press SUPER + ALT + K (top level), or SUPER + ALT + CTRL + K (the focused app's keys, if it has a keymap). Esc or either chord leaves.
 
 ## App keymaps
 
@@ -89,7 +89,7 @@ adding a file, with no code change and no restart.
 | `id`, `app` | A short id, and the name shown in the header and on the App row |
 | `about` | One line shown on the App row |
 | `match` | Words that find the app when typed. Every typed word must appear in `app`, `id` or one of these. |
-| `focus` | Focused-window rule: SUPER + ALT + K starts in this app when the focused window's `class` **or** `title` matches any of these regexes (case-insensitive). See `hyprctl activewindow` for a window's class and title. |
+| `focus` | Focused-window rule: SUPER + ALT + CTRL + K starts in this app when the focused window's `class` **or** `title` matches any of these regexes (case-insensitive). See `hyprctl activewindow` for a window's class and title. |
 | `bindings[].mods` | Any of `SUPER CTRL SHIFT ALT` (any order; aliases like `CONTROL` and `WIN` work), or `""` for a bare key |
 | `bindings[].key` | The explorer's key name: `A`…`Z`, `0`…`9`, `F1`…, `SLASH` `APOSTROPHE` `SEMICOLON` `COMMA` `PERIOD` `MINUS` `EQUAL` `GRAVE` `BRACKETLEFT` `BRACKETRIGHT` `BACKSLASH`, `UP` `DOWN` `LEFT` `RIGHT` `RETURN` `TAB` `SPACE` `ESCAPE` `DELETE` `BACKSPACE` `HOME` `END` `PRIOR` (PgUp) `NEXT` (PgDn). A shifted character is SHIFT + its key: `?` is `SHIFT` + `SLASH`, `:` is `SHIFT` + `SEMICOLON`, capital `D` is `SHIFT` + `D`. |
 | `bindings[].section` | Groups the app's list (e.g. "Tracks", "Search") and prefixes the description |

@@ -8,7 +8,7 @@
   - `esc` is the submap's Escape. In app mode it goes back to the Hyprland keys; otherwise it leaves.
   - While the overlay is in app mode it keeps the flag file `$XDG_RUNTIME_DIR/keybinding-explorer-app`. `esc` removes
     the file before asking the overlay to leave the app, so a second Esc always leaves, even if the overlay died.
-- `hypr/bindings.lua`: the SUPER + ALT + K binding and the `keybinding-explorer` submap, to copy into your config.
+- `hypr/bindings.lua`: the SUPER + ALT + K / SUPER + ALT + CTRL + K bindings and the `keybinding-explorer` submap, to copy into your config.
 - `keymaps/*.json`: one keymap per app. `keymaps/gen-<app>.mjs` regenerates one from the app's source.
 - `skills/add-app-keymap/SKILL.md`: how an agent adds an app.
 

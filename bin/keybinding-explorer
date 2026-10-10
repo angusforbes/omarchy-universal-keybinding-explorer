@@ -1,11 +1,12 @@
 #!/bin/bash
-# keybinding-explorer [on|off|esc|toggle]: the Universal Keybinding Explorer's switch (Omarchy).
+# keybinding-explorer [on|app|off|esc|toggle]: the Universal Keybinding Explorer's switch (Omarchy).
 #
 # on:  switch Hyprland to the `keybinding-explorer` submap (only Escape and the
-#      opening chord are bound there) and summon the overlay, which then receives
-#      every other key and explains it. The focused window's class and title go
-#      along, so the overlay starts in that app's context when a keymap's
-#      "focus" rule matches it.
+#      opening chords are bound there) and summon the overlay at its top level
+#      (the whole system's keys; type an app's name to search for its keys).
+# app: like `on`, but the focused window's class and title go along, so the
+#      overlay starts in that app's context when a keymap's "focus" rule matches
+#      it, and at the top level otherwise.
 # esc: Escape in the submap. In app mode (the overlay touches
 #      $XDG_RUNTIME_DIR/keybinding-explorer-app) it goes back to the Hyprland
 #      keys; otherwise it leaves like `off`. The flag is removed first, so a
@@ -19,9 +20,11 @@ FLAG="${XDG_RUNTIME_DIR:-/tmp}/keybinding-explorer-app"
 
 on() {
   rm -f "$FLAG"
-  local payload
-  payload=$(hyprctl activewindow -j 2>/dev/null | jq -c '{focus: {class: (.class // ""), title: (.title // "")}}' 2>/dev/null)
-  [[ -n $payload ]] || payload='{}'
+  local payload='{}'
+  if [[ ${1:-} == app ]]; then
+    payload=$(hyprctl activewindow -j 2>/dev/null | jq -c '{focus: {class: (.class // ""), title: (.title // "")}}' 2>/dev/null)
+    [[ -n $payload ]] || payload='{}'
+  fi
   if [[ $(omarchy-shell shell summon "$PLUGIN" "$payload" 2>/dev/null) != *ok* ]]; then
     notify-send -u low "Universal Keybinding Explorer" "Could not open the overlay (is omarchy-shell running and the plugin enabled?)"
     exit 1
@@ -46,8 +49,9 @@ esc() {
 
 case "${1:-toggle}" in
   on) on ;;
+  app) on app ;;
   off) off ;;
   esc) esc ;;
   toggle) if [[ $(hyprctl submap 2>/dev/null) == keybinding-explorer ]]; then off; else on; fi ;;
-  *) echo "usage: keybinding-explorer [on|off|esc|toggle]" >&2; exit 2 ;;
+  *) echo "usage: keybinding-explorer [on|app|off|esc|toggle]" >&2; exit 2 ;;
 esac
