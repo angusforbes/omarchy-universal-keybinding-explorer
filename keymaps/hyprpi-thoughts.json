@@ -2,7 +2,7 @@
  "format": "keybinding-explorer-keymap/1",
  "generatedBy": "keymaps/gen-hyprpi.mjs",
  "source": "https://github.com/angusforbes/hyprpi",
- "sourceCommit": "e226db9ad20417cee46758a2b336c1263adbd915",
+ "sourceCommit": "e22c2031f1331004d2ed6c4d23f9d5518978923d",
  "id": "hyprpi-thoughts",
  "app": "hyprpi Thoughts",
  "about": "hyprpi's Thoughts window: talk to this world's Thoughts agent, search its history",
@@ -28,7 +28,7 @@
    "desc": "Talk to Thoughts (it remembers; it can ask agents and hand them work), or run the /command",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:811"
+    "mockups/search-tui.mjs:1191"
    ],
    "seq": "\r"
   },
@@ -38,7 +38,7 @@
    "desc": "The same as Enter",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:808"
+    "mockups/search-tui.mjs:1188"
    ],
    "seq": "\u001b[13;5u"
   },
@@ -48,7 +48,7 @@
    "desc": "Interrupt what's running; else close help. Never touches the box",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:774"
+    "mockups/search-tui.mjs:1154"
    ],
    "seq": "\u001b"
   },
@@ -58,7 +58,7 @@
    "desc": "Move the highlight up (scroll back through the thread)",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:802"
+    "mockups/search-tui.mjs:1182"
    ],
    "seq": "\u001b[1;5A"
   },
@@ -68,7 +68,7 @@
    "desc": "Move the highlight down",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:803"
+    "mockups/search-tui.mjs:1183"
    ],
    "seq": "\u001b[1;5B"
   },
@@ -78,7 +78,7 @@
    "desc": "Scroll back a page",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:809"
+    "mockups/search-tui.mjs:1189"
    ],
    "seq": "\u001b[5~"
   },
@@ -88,7 +88,7 @@
    "desc": "Scroll forward a page",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:810"
+    "mockups/search-tui.mjs:1190"
    ],
    "seq": "\u001b[6~"
   },
@@ -98,7 +98,7 @@
    "desc": "The oldest",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:800"
+    "mockups/search-tui.mjs:1180"
    ],
    "seq": "\u001b[1;5H"
   },
@@ -108,7 +108,7 @@
    "desc": "Back to the newest, and follow",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:799"
+    "mockups/search-tui.mjs:1179"
    ],
    "seq": "\u001b[1;5F"
   },
@@ -118,7 +118,7 @@
    "desc": "End of the box; with an empty box, follow the newest again",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:801"
+    "mockups/search-tui.mjs:1181"
    ],
    "seq": "\u001b[F"
   },
@@ -128,7 +128,7 @@
    "desc": "Complete a /command or an @name (again: the next one)",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:791"
+    "mockups/search-tui.mjs:1171"
    ],
    "seq": "\t"
   },
@@ -138,7 +138,7 @@
    "desc": "Complete an @name, backwards",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:791"
+    "mockups/search-tui.mjs:1171"
    ],
    "seq": "\u001b[Z"
   },
@@ -148,7 +148,7 @@
    "desc": "Next world",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:789"
+    "mockups/search-tui.mjs:1169"
    ]
   },
   {
@@ -157,7 +157,7 @@
    "desc": "Previous world",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:790"
+    "mockups/search-tui.mjs:1170"
    ]
   },
   {
@@ -166,7 +166,7 @@
    "desc": "Cursor to the start of the box",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:814"
+    "mockups/search-tui.mjs:1194"
    ],
    "seq": "\u0001"
   },
@@ -176,7 +176,7 @@
    "desc": "Copy the box's selection, else the whole box; never quits",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:783"
+    "mockups/search-tui.mjs:1163"
    ],
    "seq": "\u0003"
   },
@@ -186,7 +186,7 @@
    "desc": "Copy the highlighted thread text, else the box's selection (what SUPER+C sends)",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:764"
+    "mockups/search-tui.mjs:1144"
    ],
    "seq": "\u001b[2;5~"
   },
@@ -196,7 +196,7 @@
    "desc": "Quit the window",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:773"
+    "mockups/search-tui.mjs:1153"
    ],
    "seq": "\u0011"
   },
@@ -206,7 +206,7 @@
    "desc": "An agent's name or an evidence line: jump to that agent's window",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:828"
+    "mockups/search-tui.mjs:1209"
    ]
   },
   {
@@ -215,7 +215,7 @@
    "desc": "Scroll back through the thread",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:823"
+    "mockups/search-tui.mjs:1204"
    ]
   },
   {
@@ -224,7 +224,7 @@
    "desc": "Scroll forward through the thread",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:824"
+    "mockups/search-tui.mjs:1205"
    ]
   },
   {
@@ -233,7 +233,7 @@
    "desc": "Click a world's letter in the footer: switch to that world. Also: drag in the thread selects and copies; click a link or file path opens it; double / triple click in the box selects a word / the line",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:821"
+    "mockups/search-tui.mjs:1201"
    ]
   },
   {
@@ -242,17 +242,26 @@
    "desc": "Copy the whole item you press on",
    "section": "Thoughts",
    "src": [
-    "mockups/search-tui.mjs:830"
+    "mockups/search-tui.mjs:1211"
    ]
   }
  ],
  "commands": [
   {
+   "cmd": "steps",
+   "args": "[cancel]",
+   "desc": "what /step still has queued; cancel drops it",
+   "src": [
+    "mockups/search-tui.mjs:300"
+   ],
+   "where": "the hyprpi Thoughts box"
+  },
+  {
    "cmd": "keyword",
    "args": "WORDS",
    "desc": "exact-word search of this world's history (instant, no model): the 10 newest matching turns",
    "src": [
-    "mockups/search-tui.mjs:200"
+    "mockups/search-tui.mjs:321"
    ],
    "where": "the hyprpi Thoughts box"
   },
@@ -261,7 +270,7 @@
    "args": "WORDS",
    "desc": "the same as /keyword",
    "src": [
-    "mockups/search-tui.mjs:201"
+    "mockups/search-tui.mjs:322"
    ],
    "where": "the hyprpi Thoughts box"
   },
@@ -270,7 +279,7 @@
    "args": "QUESTION",
    "desc": "a small model answers from the history and cites the turns (answer last)",
    "src": [
-    "mockups/search-tui.mjs:202"
+    "mockups/search-tui.mjs:323"
    ],
    "where": "the hyprpi Thoughts box"
   },
@@ -279,7 +288,7 @@
    "args": "QUESTION",
    "desc": "the same as /ask",
    "src": [
-    "mockups/search-tui.mjs:203"
+    "mockups/search-tui.mjs:324"
    ],
    "where": "the hyprpi Thoughts box"
   },
@@ -288,7 +297,7 @@
    "args": "[@names…] [3h|today|since 9am] [words]",
    "desc": "a summary by project (done · decided · waiting on you) of the Stream lines; alone: since you last looked here",
    "src": [
-    "mockups/search-tui.mjs:204"
+    "mockups/search-tui.mjs:325"
    ],
    "where": "the hyprpi Thoughts box"
   },
@@ -297,7 +306,7 @@
    "args": "[N]",
    "desc": "the last /keyword again with N (default 20) more of the older matches",
    "src": [
-    "mockups/search-tui.mjs:205"
+    "mockups/search-tui.mjs:326"
    ],
    "where": "the hyprpi Thoughts box"
   },
@@ -306,7 +315,7 @@
    "args": "TEXT",
    "desc": "the same as typing TEXT: tell Thoughts",
    "src": [
-    "mockups/search-tui.mjs:209"
+    "mockups/search-tui.mjs:330"
    ],
    "where": "the hyprpi Thoughts box"
   },
